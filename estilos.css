@@ -189,9 +189,9 @@ section {
   margin-bottom: 10px;
 }
 
-/* Tarjetas de programas interactivas */
+
 .programas {
-  align-items: start; /* solo crece la tarjeta que estás mirando */
+  align-items: start; 
 }
 
 .expandible {
@@ -415,7 +415,7 @@ section {
   transform: scale(1.25);
 }
 
-/* Redes sociales y WhatsApp */
+
 .redes {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
