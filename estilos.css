@@ -1,4 +1,60 @@
-/* Configuracion de toda la pagina(Fondo) */
+/* ==========================================================
+   GUÍA DEL CSS - CARIBES ACUÁTICOS
+
+   COLORES: están en :root, al inicio. Si cambias un color
+   ahí, cambia en toda la página.
+
+   MENÚ SUPERIOR: header (barra), .logo (nombre del club),
+   nav (enlaces) y .nav-btn (botón "Ven e inscríbete").
+
+   PORTADA: .hero es la zona grande del inicio con la foto de
+   fondo (img/cari.jpg). Dentro están .etiqueta, el título h1
+   y el texto. .btn es el botón celeste.
+
+   SECCIONES: main centra el contenido, section da espacio entre
+   secciones, .titulo es el título de cada una y .descripcion
+   el texto de abajo.
+
+   TARJETAS: .nosotros (quiénes somos) y .programas ordenan las
+   tarjetas en columnas. .tarjeta es la caja blanca, .icono el
+   emoji de arriba.
+
+   PROGRAMAS QUE SE EXPANDEN: .expandible es la tarjeta, .pista
+   es el texto "+ Ver más" y .extra es la información oculta que
+   se abre al pasar el cursor, tocar o usar el teclado.
+
+   ¿POR QUÉ ELEGIR A CARIBES?: .porque es la caja con Flexbox
+   (imagen a un lado e información al otro), .porque-imagen es
+   la foto (img/porque.jpg), .porque-info es el texto y
+   .porque-lista son los tres puntos con su emoji. En celular
+   la foto pasa arriba y el texto abajo.
+
+   EQUIPO: .equipo ordena los entrenadores, .persona es cada
+   recuadro, .avatar el círculo con iniciales o foto y .cargo
+   el puesto de la persona.
+
+   BANDA OSCURA: .llamada es "¡Es tu momento de entrar al agua!".
+
+   CARRUSEL: .carrusel es el contenedor, .carrusel-pista la fila
+   de fotos, .diapositiva cada foto, figcaption el texto sobre
+   la foto, .carrusel-btn las flechas y .punto los puntos.
+
+   REDES Y WHATSAPP: .redes ordena las dos tarjetas, .redes-tarjeta
+   es cada caja, .btn-whatsapp el botón verde y .red los botones
+   de Instagram, Facebook y TikTok.
+
+   PIE DE PÁGINA: footer es la franja oscura del final.
+
+   CELULAR: @media (max-width: 650px) cambia tamaños y espacios
+   en pantallas pequeñas.
+
+   MENOS MOVIMIENTO: @media (prefers-reduced-motion) quita las
+   animaciones para quien lo tenga activado.
+
+   TIPS: para cambiar tamaños busca font-size, para espacios
+   padding y margin, y para bordes redondeados border-radius.
+   ========================================================== */
+
 * {
   margin: 0;
   padding: 0;
@@ -25,7 +81,6 @@ body {
   line-height: 1.6;
 }
 
-/* Encabezado y menu interactivo */
 header {
   background: var(--blanco);
   padding: 18px 8%;
@@ -80,7 +135,6 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
-/* Portada principal de la pagina */
 .hero {
   min-height: 490px;
   display: flex;
@@ -138,7 +192,6 @@ button:focus-visible {
   transform: translateY(-3px);
 }
 
-/* Contenido en las tarjetas */
 main {
   max-width: 1150px;
   margin: auto;
@@ -194,10 +247,9 @@ section {
 }
 
 .programas {
-  align-items: start; 
+  align-items: start;
 }
 
-/* Las tarjetas que se expanden */
 .expandible {
   cursor: pointer;
 }
@@ -250,21 +302,70 @@ section {
   display: none;
 }
 
-/* Partes del beneficios y el equipo del club */
-.beneficios {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  margin-top: 25px;
+.porque {
+  display: flex;
+  align-items: stretch;
+  background: white;
+  border: 1px solid #dbeafe;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px #07598515;
 }
 
-.beneficio {
-  text-align: center;
-  padding: 20px;
+.porque-imagen {
+  flex: 1 1 45%;
+  min-height: 360px;
+  background: var(--azul);
 }
 
-.beneficio .icono {
-  font-size: 2rem;
+.porque-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.porque-info {
+  flex: 1 1 55%;
+  padding: 45px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.porque-info .titulo {
+  text-align: left;
+}
+
+.porque-info .descripcion {
+  text-align: left;
+  margin: 0 0 24px;
+}
+
+.porque-lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.porque-lista li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.porque-lista .icono {
+  font-size: 1.8rem;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.porque-lista h3 {
+  color: var(--azul);
+  margin-bottom: 2px;
 }
 
 .equipo {
@@ -308,7 +409,6 @@ section {
   margin-bottom: 8px;
 }
 
-/* Parte de la invitacion al club */
 .llamada {
   background: var(--azul-oscuro);
   color: white;
@@ -327,7 +427,6 @@ section {
   margin: 0 auto 22px;
 }
 
-/* Carrucel de imagenes */
 .carrusel {
   position: relative;
   max-width: 900px;
@@ -420,7 +519,6 @@ section {
   transform: scale(1.25);
 }
 
-/* Redes sociales del club y contacto de la secretaria */
 .redes {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -485,7 +583,6 @@ section {
   color: white;
 }
 
-/* Pie de la pagina */
 footer {
   background: var(--azul-oscuro);
   color: white;
@@ -506,7 +603,6 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* Adaptacion para otros dispositivos  */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .carrusel-pista { scroll-behavior: auto; }
@@ -560,5 +656,19 @@ footer a:hover {
     width: 38px;
     height: 38px;
     font-size: 1.3rem;
+  }
+
+  .porque {
+    flex-direction: column;
+  }
+
+  .porque-imagen {
+    flex: none;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+
+  .porque-info {
+    padding: 28px 22px;
   }
 }
