@@ -1,3 +1,4 @@
+/* Configuracion de toda la pagina(Fondo) */
 * {
   margin: 0;
   padding: 0;
@@ -24,6 +25,7 @@ body {
   line-height: 1.6;
 }
 
+/* Encabezado y menu interactivo */
 header {
   background: var(--blanco);
   padding: 18px 8%;
@@ -78,6 +80,7 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
+/* Portada principal de la pagina */
 .hero {
   min-height: 490px;
   display: flex;
@@ -135,6 +138,7 @@ button:focus-visible {
   transform: translateY(-3px);
 }
 
+/* Contenido en las tarjetas */
 main {
   max-width: 1150px;
   margin: auto;
@@ -189,11 +193,11 @@ section {
   margin-bottom: 10px;
 }
 
-
 .programas {
   align-items: start; 
 }
 
+/* Las tarjetas que se expanden */
 .expandible {
   cursor: pointer;
 }
@@ -246,6 +250,7 @@ section {
   display: none;
 }
 
+/* Partes del beneficios y el equipo del club */
 .beneficios {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -262,7 +267,6 @@ section {
   font-size: 2rem;
 }
 
-/* Equipo */
 .equipo {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -304,6 +308,7 @@ section {
   margin-bottom: 8px;
 }
 
+/* Parte de la invitacion al club */
 .llamada {
   background: var(--azul-oscuro);
   color: white;
@@ -322,7 +327,7 @@ section {
   margin: 0 auto 22px;
 }
 
-/* Galería / carrusel */
+/* Carrucel de imagenes */
 .carrusel {
   position: relative;
   max-width: 900px;
@@ -415,7 +420,7 @@ section {
   transform: scale(1.25);
 }
 
-
+/* Redes sociales del club y contacto de la secretaria */
 .redes {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -480,6 +485,7 @@ section {
   color: white;
 }
 
+/* Pie de la pagina */
 footer {
   background: var(--azul-oscuro);
   color: white;
@@ -500,6 +506,7 @@ footer a:hover {
   text-decoration: underline;
 }
 
+/* Adaptacion para otros dispositivos  */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .carrusel-pista { scroll-behavior: auto; }
