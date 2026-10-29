@@ -44,6 +44,7 @@
 
   <main>
 
+    <!-- QUIÉNES SOMOS (edita los textos con la información real del club) -->
     <section id="quienes-somos">
       <h2 class="titulo">Quiénes somos</h2>
 
@@ -82,6 +83,7 @@
       </div>
     </section>
 
+    <!-- GALERÍA (cambia las fotos en la carpeta img y los textos de cada una) -->
     <section id="galeria">
       <h2 class="titulo">Conoce nuestro club</h2>
 
@@ -126,7 +128,7 @@
       <div class="puntos" id="puntos"></div>
     </section>
 
-
+    <!-- PROGRAMAS (tarjetas interactivas: se expanden al pasar el cursor) -->
     <section id="programas">
       <h2 class="titulo">Encuentra tu programa ideal</h2>
 
@@ -220,7 +222,7 @@
       </div>
     </section>
 
-    
+    <!-- ¿POR QUÉ ELEGIR A CARIBES? (imagen a un lado e información al otro) -->
     <section id="beneficios">
       <div class="porque">
 
@@ -268,7 +270,7 @@
       </div>
     </section>
 
-    
+    <!-- EQUIPO (cambia nombres, cargos y descripciones por los reales) -->
     <section id="equipo">
       <h2 class="titulo">Nuestro equipo</h2>
 
@@ -303,3 +305,141 @@
           <div class="avatar">NA</div>
           <h3>Nombre Apellido</h3>
           <p class="cargo">Entrenadora de natación para adultos</p>
+          <p>Breve descripción de su experiencia y formación.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="llamada">
+      <h2>¡Es tu momento de entrar al agua!</h2>
+
+      <p>
+        Da el primer paso y conoce nuestros programas.
+        Escríbenos para consultar horarios, precios y disponibilidad.
+      </p>
+
+      <a href="#redes" class="btn">Solicitar información</a>
+    </section>
+
+    <!-- REDES SOCIALES Y WHATSAPP (cambia el número y los enlaces por los reales) -->
+    <section id="redes">
+      <h2 class="titulo">Inscríbete y síguenos</h2>
+
+      <p class="descripcion">
+        Para inscribirte o resolver dudas sobre horarios y precios, habla
+        directamente con nuestra secretaria. Y síguenos en redes para ver
+        las novedades del club.
+      </p>
+
+      <div class="redes">
+
+        <article class="redes-tarjeta">
+          <div class="icono">💬</div>
+          <h3>Habla con la secretaria</h3>
+          <p>
+            Resuelve tus dudas sobre horarios, precios e inscripciones.<br>
+            <strong>+57 300 000 0000</strong><br>
+            Lunes a viernes, 8:00 a. m. a 6:00 p. m.
+          </p>
+          <a class="btn-whatsapp"
+             href="https://wa.me/573000000000?text=Hola%2C%20quiero%20inscribirme%20en%20las%20clases%20de%20nataci%C3%B3n"
+             target="_blank" rel="noopener noreferrer">
+            Escribir por WhatsApp
+          </a>
+        </article>
+
+        <article class="redes-tarjeta">
+          <div class="icono">🌐</div>
+          <h3>Síguenos en redes</h3>
+          <p>Fotos, resultados, eventos y noticias del club.</p>
+          <div class="lista-redes">
+            <a class="red" href="https://www.instagram.com/tu_club" target="_blank" rel="noopener noreferrer">📸 Instagram</a>
+            <a class="red" href="https://www.facebook.com/tu_club" target="_blank" rel="noopener noreferrer">👍 Facebook</a>
+            <a class="red" href="https://www.tiktok.com/@tu_club" target="_blank" rel="noopener noreferrer">🎵 TikTok</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <h3>🌊 Caribes Acuáticos | Club de Natación</h3>
+    <p>Aprende, disfruta y supera tus límites.</p>
+    <p>
+      <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer">WhatsApp</a> ·
+      <a href="https://www.instagram.com/tu_club" target="_blank" rel="noopener noreferrer">Instagram</a> ·
+      <a href="https://www.facebook.com/tu_club" target="_blank" rel="noopener noreferrer">Facebook</a>
+    </p>
+    <p>© 2026 Caribes Acuáticos. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    (function () {
+      var pista = document.querySelector('.carrusel-pista');
+      var diapositivas = pista.querySelectorAll('.diapositiva');
+      var anterior = document.querySelector('.carrusel-btn.anterior');
+      var siguiente = document.querySelector('.carrusel-btn.siguiente');
+      var contenedorPuntos = document.getElementById('puntos');
+      var total = diapositivas.length;
+      var pausado = false;
+
+      // Crea un punto por cada foto
+      for (var i = 0; i < total; i++) {
+        var punto = document.createElement('button');
+        punto.type = 'button';
+        punto.className = 'punto';
+        punto.setAttribute('aria-label', 'Ir a la foto ' + (i + 1));
+        punto.dataset.indice = i;
+        contenedorPuntos.appendChild(punto);
+      }
+      var puntos = contenedorPuntos.querySelectorAll('.punto');
+
+      function actual() {
+        return Math.round(pista.scrollLeft / pista.clientWidth);
+      }
+
+      function ir(indice) {
+        indice = (indice + total) % total;
+        pista.scrollTo({ left: indice * pista.clientWidth, behavior: 'smooth' });
+      }
+
+      function marcarPunto() {
+        var a = actual();
+        puntos.forEach(function (p, i) {
+          p.classList.toggle('activo', i === a);
+          if (i === a) { p.setAttribute('aria-current', 'true'); }
+          else { p.removeAttribute('aria-current'); }
+        });
+      }
+
+      anterior.addEventListener('click', function () { ir(actual() - 1); });
+      siguiente.addEventListener('click', function () { ir(actual() + 1); });
+      contenedorPuntos.addEventListener('click', function (e) {
+        if (e.target.dataset.indice !== undefined) { ir(Number(e.target.dataset.indice)); }
+      });
+      pista.addEventListener('scroll', marcarPunto);
+      marcarPunto();
+
+      // Avance automático (se pausa al pasar el cursor o al enfocar; no corre si el usuario prefiere menos movimiento)
+      var carrusel = document.querySelector('.carrusel');
+      carrusel.addEventListener('mouseenter', function () { pausado = true; });
+      carrusel.addEventListener('mouseleave', function () { pausado = false; });
+      carrusel.addEventListener('focusin', function () { pausado = true; });
+      carrusel.addEventListener('focusout', function () { pausado = false; });
+
+      var menosMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!menosMovimiento) {
+        setInterval(function () {
+          if (!pausado && !document.hidden) { ir(actual() + 1); }
+        }, 5000);
+      }
+    })();
+  </script>
+
+</body>
+</html>
+
+
