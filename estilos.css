@@ -356,11 +356,13 @@ section {
   margin-top: 24px;
 }
 
-/* Metas claras: tarjeta con fondo (foto opcional) que muestra la información al pasar el cursor.
-   Si no existe img/porque1.jpg se ve el degradado azul. */
+/* Metas claras: cuadrado grande con fondo (foto opcional) que muestra la información
+   al pasar el cursor. Si no existe img/porque1.jpg se ve el degradado azul. */
 .metas {
   position: relative;
-  min-height: 420px;
+  width: min(100%, 560px);
+  margin: 0 auto;
+  aspect-ratio: 1 / 1;
   border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
@@ -449,10 +451,6 @@ section {
   position: absolute;
   left: 0;
   color: var(--azul-claro);
-}
-
-.metas-detalle .btn {
-  margin-top: 18px;
 }
 
 /* Se abre al pasar el cursor, al enfocar con el teclado o al tocar en el celular */
@@ -786,12 +784,12 @@ footer a:hover {
     padding: 28px 22px;
   }
 
-  .metas {
-    min-height: 480px;
+  .metas-detalle {
+    padding: 20px 20px;
   }
 
-  .metas-detalle {
-    padding: 24px 22px;
+  .metas-detalle .icono {
+    display: none;
   }
 
   .metas-detalle li {
