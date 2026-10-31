@@ -8,13 +8,13 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Colores del club (de los estatutos) */
+/* Colores del club  */
 :root {
   --naranja: #F15D13;
-  --naranja-texto: #C24A0A;   /* naranja más oscuro para texto pequeño, se lee mejor */
+  --naranja-texto: #C24A0A;  
   --azul-claro: #5BACEB;
   --azul-oscuro: #003380;
-  --azul-profundo: #00265e;   /* para hover y fondos oscuros */
+  --azul-profundo: #00265e;  
   --fondo: #f2f8fe;
   --blanco: #ffffff;
   --texto: #334155;
