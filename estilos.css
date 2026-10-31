@@ -330,7 +330,7 @@ section {
   flex-direction: row-reverse;
 }
 
-/* Bloques de "Quiénes somos" y "¿Por qué elegir a Caribes?" uno debajo del otro */
+/* Bloques de "Quiénes somos" uno debajo del otro */
 .porque-bloques {
   display: flex;
   flex-direction: column;
@@ -356,15 +356,34 @@ section {
   margin-top: 24px;
 }
 
-/* Imagen que se expande al pasar el cursor (Metas claras) */
-.expandible-img {
+/* Metas claras: tarjeta con fondo (foto opcional) que muestra la información al pasar el cursor.
+   Si no existe img/porque1.jpg se ve el degradado azul. */
+.metas {
   position: relative;
+  min-height: 420px;
+  border-radius: 20px;
+  overflow: hidden;
   cursor: pointer;
+  border: 1px solid var(--borde);
+  box-shadow: 0 8px 25px #00338015;
+  background:
+    url("img/porque1.jpg") center/cover no-repeat,
+    linear-gradient(135deg, var(--azul-oscuro), var(--azul-claro));
 }
 
-.expandible-img:focus-visible {
+.metas:focus-visible {
   outline: 3px solid var(--naranja);
-  outline-offset: -3px;
+  outline-offset: 3px;
+}
+
+/* Emoji grande en el centro mientras no se pasa el cursor */
+.metas-icono {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5.5rem;
+  transition: opacity 0.3s;
 }
 
 .pista-img {
@@ -381,62 +400,76 @@ section {
   transition: opacity 0.3s;
 }
 
-/* Panel con la información: empieza con altura 0 y se despliega hacia arriba */
-.porque-detalle {
+/* Panel con la información: oculto hasta que se pasa el cursor */
+.metas-detalle {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: grid;
-  grid-template-rows: 0fr;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
   background: rgba(0, 38, 94, 0.94);
   color: white;
-  transition: grid-template-rows 0.4s ease;
+  border-top: 6px solid var(--naranja);
+  overflow-y: auto;
+  opacity: 0;
+  transform: translateY(24px);
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.porque-detalle > div {
-  overflow: hidden;
-  min-height: 0;
+.metas-detalle .icono {
+  font-size: 2.4rem;
+  margin-bottom: 6px;
 }
 
-.detalle-contenido {
-  border-top: 4px solid var(--naranja);
-  padding: 20px 24px;
+.metas-detalle .porque-titulo {
+  color: white;
 }
 
-.detalle-titulo {
-  display: block;
-  font-size: 1.1rem;
-  margin-bottom: 10px;
+.metas-detalle p {
+  font-size: 1.05rem;
+  margin-bottom: 14px;
 }
 
-.porque-detalle ul {
+.metas-detalle ul {
   list-style: none;
 }
 
-.porque-detalle li {
+.metas-detalle li {
   position: relative;
   padding-left: 24px;
   margin-bottom: 8px;
   font-size: 0.95rem;
 }
 
-.porque-detalle li::before {
+.metas-detalle li::before {
   content: "✔";
   position: absolute;
   left: 0;
   color: var(--azul-claro);
 }
 
-/* Se abre al pasar el cursor, al enfocar con el teclado o al tocar en el celular */
-.expandible-img:hover .porque-detalle,
-.expandible-img:focus .porque-detalle,
-.expandible-img:focus-within .porque-detalle {
-  grid-template-rows: 1fr;
+.metas-detalle .btn {
+  margin-top: 18px;
 }
 
-.expandible-img:hover .pista-img,
-.expandible-img:focus .pista-img {
+/* Se abre al pasar el cursor, al enfocar con el teclado o al tocar en el celular */
+.metas:hover .metas-detalle,
+.metas:focus .metas-detalle,
+.metas:focus-within .metas-detalle {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.metas:hover .metas-icono,
+.metas:focus .metas-icono,
+.metas:focus-within .metas-icono,
+.metas:hover .pista-img,
+.metas:focus .pista-img,
+.metas:focus-within .pista-img {
   opacity: 0;
 }
 
@@ -686,7 +719,7 @@ footer a:hover {
   .carrusel-pista { scroll-behavior: auto; }
   .btn, .tarjeta, .btn-whatsapp, .red, .carrusel-btn, .punto { transition: none; }
   .extra { transition: none; }
-  .porque-detalle, .pista-img { transition: none; }
+  .metas-detalle, .metas-icono, .pista-img { transition: none; }
 }
 
 @media (max-width: 650px) {
@@ -753,11 +786,15 @@ footer a:hover {
     padding: 28px 22px;
   }
 
-  .detalle-contenido {
-    padding: 14px 16px;
+  .metas {
+    min-height: 480px;
   }
 
-  .porque-detalle li {
+  .metas-detalle {
+    padding: 24px 22px;
+  }
+
+  .metas-detalle li {
     font-size: 0.88rem;
     margin-bottom: 6px;
   }
