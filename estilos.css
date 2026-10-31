@@ -331,6 +331,32 @@ section {
   flex-direction: row-reverse;
 }
 
+/* Tres bloques de "¿Por qué elegir a Caribes?" uno debajo del otro */
+.porque-bloques {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.porque-info > .icono {
+  font-size: 2.6rem;
+  margin-bottom: 8px;
+}
+
+.porque-titulo {
+  color: var(--azul-oscuro);
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.porque-info > p {
+  font-size: 1.05rem;
+}
+
+.porque-info > .btn {
+  margin-top: 24px;
+}
+
 .equipo {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
