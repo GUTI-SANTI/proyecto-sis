@@ -159,7 +159,8 @@ section {
   margin: 0 auto 30px;
 }
 
-.programas {
+.programas,
+.nosotros {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 22px;
