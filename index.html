@@ -44,7 +44,6 @@
 
   <main>
 
-
     <section id="quienes-somos">
       <h2 class="titulo">Quiénes somos</h2>
 
@@ -52,34 +51,35 @@
         Somos Caribes Acuáticos
       </p>
 
-      <div class="nosotros">
-        <article class="tarjeta">
-          <div class="icono">🎯</div>
-          <h3>Nuestra misión</h3>
-          <p>
-            Promover la natación 
-          </p>
-        </article>
+      <div class="porque invertido">
 
-        <article class="tarjeta">
-          <div class="icono">👁️</div>
-          <h3>Nuestra visión</h3>
-          <p>
-            Ser un club de referencia en la región
-          </p>
-        </article>
+        <div class="porque-imagen">
+          <img src="img/nosotros.jpg" alt="Equipo y alumnos del club Caribes Acuáticos" loading="lazy">
+        </div>
 
-        <article class="tarjeta">
-          <div class="icono">📍</div>
-          <h3>Dónde entrenamos</h3>
-          <p>
-            Escribe aquí la dirección de la piscina 
-          </p>
-        </article>
+        <div class="porque-info">
+          <ul class="porque-lista">
+            <li>
+              <span class="icono">🎯</span>
+              <div>
+                <h3>Nuestra misión</h3>
+                <p>Promover la natación</p>
+              </div>
+            </li>
+
+            <li>
+              <span class="icono">👁️</span>
+              <div>
+                <h3>Nuestra visión</h3>
+                <p>Ser un club de referencia en la región</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
       </div>
     </section>
 
-    
     <section id="galeria">
       <h2 class="titulo">Conoce nuestro club</h2>
 
@@ -124,7 +124,6 @@
       <div class="puntos" id="puntos"></div>
     </section>
 
-  
     <section id="programas">
       <h2 class="titulo">Encuentra tu programa ideal</h2>
 
@@ -213,8 +212,14 @@
       </div>
     </section>
 
-  
     <section id="beneficios">
+      <h2 class="titulo">¿Por qué elegir a Caribes?</h2>
+
+      <p class="descripcion">
+        Queremos que cada alumno disfrute el proceso,
+        aprenda con confianza y avance a su propio ritmo.
+      </p>
+
       <div class="porque">
 
         <div class="porque-imagen">
@@ -222,13 +227,6 @@
         </div>
 
         <div class="porque-info">
-          <h2 class="titulo">¿Por qué elegir a Caribes?</h2>
-
-          <p class="descripcion">
-            Queremos que cada alumno disfrute el proceso,
-            aprenda con confianza y avance a su propio ritmo.
-          </p>
-
           <ul class="porque-lista">
             <li>
               <span class="icono">🎯</span>
@@ -261,7 +259,6 @@
       </div>
     </section>
 
-   
     <section id="equipo">
       <h2 class="titulo">Nuestro equipo</h2>
 
@@ -313,7 +310,6 @@
       <a href="#redes" class="btn">Solicitar información</a>
     </section>
 
-    
     <section id="redes">
       <h2 class="titulo">Inscríbete y síguenos</h2>
 
@@ -345,7 +341,6 @@
           <div class="lista-redes">
             <a class="red" href="https://www.instagram.com/tu_club" target="_blank" rel="noopener noreferrer">📸 Instagram</a>
             <a class="red" href="https://www.facebook.com/tu_club" target="_blank" rel="noopener noreferrer">ⓕ Facebook</a>
-          
           </div>
         </article>
 
@@ -375,7 +370,6 @@
       var total = diapositivas.length;
       var pausado = false;
 
-      
       for (var i = 0; i < total; i++) {
         var punto = document.createElement('button');
         punto.type = 'button';
@@ -412,7 +406,6 @@
       pista.addEventListener('scroll', marcarPunto);
       marcarPunto();
 
-  
       var carrusel = document.querySelector('.carrusel');
       carrusel.addEventListener('mouseenter', function () { pausado = true; });
       carrusel.addEventListener('mouseleave', function () { pausado = false; });
@@ -430,5 +423,4 @@
 
 </body>
 </html>
-
 
