@@ -356,6 +356,90 @@ section {
   margin-top: 24px;
 }
 
+/* Imagen que se expande al pasar el cursor (Metas claras) */
+.expandible-img {
+  position: relative;
+  cursor: pointer;
+}
+
+.expandible-img:focus-visible {
+  outline: 3px solid var(--naranja);
+  outline-offset: -3px;
+}
+
+.pista-img {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  background: rgba(0, 38, 94, 0.85);
+  color: white;
+  border: 1px solid var(--naranja);
+  border-radius: 20px;
+  padding: 7px 14px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  transition: opacity 0.3s;
+}
+
+/* Panel con la información: empieza con altura 0 y se despliega hacia arriba */
+.porque-detalle {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  grid-template-rows: 0fr;
+  background: rgba(0, 38, 94, 0.94);
+  color: white;
+  transition: grid-template-rows 0.4s ease;
+}
+
+.porque-detalle > div {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.detalle-contenido {
+  border-top: 4px solid var(--naranja);
+  padding: 20px 24px;
+}
+
+.detalle-titulo {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.porque-detalle ul {
+  list-style: none;
+}
+
+.porque-detalle li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.porque-detalle li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--azul-claro);
+}
+
+/* Se abre al pasar el cursor, al enfocar con el teclado o al tocar en el celular */
+.expandible-img:hover .porque-detalle,
+.expandible-img:focus .porque-detalle,
+.expandible-img:focus-within .porque-detalle {
+  grid-template-rows: 1fr;
+}
+
+.expandible-img:hover .pista-img,
+.expandible-img:focus .pista-img {
+  opacity: 0;
+}
+
 .equipo {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -602,6 +686,7 @@ footer a:hover {
   .carrusel-pista { scroll-behavior: auto; }
   .btn, .tarjeta, .btn-whatsapp, .red, .carrusel-btn, .punto { transition: none; }
   .extra { transition: none; }
+  .porque-detalle, .pista-img { transition: none; }
 }
 
 @media (max-width: 650px) {
@@ -666,5 +751,14 @@ footer a:hover {
 
   .porque-info {
     padding: 28px 22px;
+  }
+
+  .detalle-contenido {
+    padding: 14px 16px;
+  }
+
+  .porque-detalle li {
+    font-size: 0.88rem;
+    margin-bottom: 6px;
   }
 }
