@@ -159,8 +159,7 @@ section {
   margin: 0 auto 30px;
 }
 
-.programas,
-.nosotros {
+.programas {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 22px;
@@ -277,15 +276,6 @@ section {
   align-items: flex-start;
 }
 
-.porque-info .titulo {
-  text-align: left;
-}
-
-.porque-info .descripcion {
-  text-align: left;
-  margin: 0 0 24px;
-}
-
 .porque-lista {
   list-style: none;
   display: flex;
@@ -309,6 +299,14 @@ section {
 .porque-lista h3 {
   color: var(--azul);
   margin-bottom: 2px;
+}
+
+.porque-lista:last-child {
+  margin-bottom: 0;
+}
+
+.porque.invertido {
+  flex-direction: row-reverse;
 }
 
 .equipo {
@@ -601,7 +599,8 @@ footer a:hover {
     font-size: 1.3rem;
   }
 
-  .porque {
+  .porque,
+  .porque.invertido {
     flex-direction: column;
   }
 
