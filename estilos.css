@@ -8,13 +8,17 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Colores del club (tomados de los estatutos) */
 :root {
-  --azul: #075985;
-  --azul-oscuro: #082f49;
-  --celeste: #38bdf8;
-  --fondo: #f0f9ff;
+  --naranja: #F15D13;
+  --naranja-texto: #C24A0A;   /* naranja más oscuro, para texto pequeño que se lea bien */
+  --azul-claro: #5BACEB;
+  --azul-oscuro: #003380;
+  --azul-profundo: #00265e;   /* para hover y fondos más oscuros */
+  --fondo: #f2f8fe;
   --blanco: #ffffff;
   --texto: #334155;
+  --borde: #d6e8f8;
 }
 
 body {
@@ -22,6 +26,18 @@ body {
   background: var(--fondo);
   color: var(--texto);
   line-height: 1.6;
+}
+
+/* Marca de agua del pez (como en los estatutos). Para usar el logo real,
+   cambia el url(...) por url("img/logo.png") */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.07;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 140'%3E%3Cpath fill='%23777' d='M20 66C50 14 122 10 162 56L194 30L188 66L194 102L162 78C122 124 50 118 20 66Z'/%3E%3Ccircle cx='54' cy='58' r='8' fill='%23fff'/%3E%3Cpath fill='none' stroke='%23777' stroke-width='7' stroke-linecap='round' d='M8 124q21-16 42 0t42 0t42 0t42 0'/%3E%3C/svg%3E") center / min(75vw, 560px) no-repeat;
 }
 
 header {
@@ -32,11 +48,12 @@ header {
   align-items: center;
   gap: 20px;
   flex-wrap: wrap;
-  box-shadow: 0 2px 12px #082f4910;
+  border-bottom: 3px solid var(--naranja);
+  box-shadow: 0 2px 12px #00338015;
 }
 
 .logo {
-  color: var(--azul);
+  color: var(--azul-oscuro);
   font-size: 1.7rem;
   font-weight: bold;
   text-decoration: none;
@@ -57,11 +74,11 @@ nav a {
 }
 
 nav a:hover {
-  color: #0284c7;
+  color: var(--naranja-texto);
 }
 
 nav .nav-btn {
-  background: var(--azul);
+  background: var(--azul-oscuro);
   color: white;
   padding: 10px 18px;
   border-radius: 25px;
@@ -69,16 +86,48 @@ nav .nav-btn {
 
 nav .nav-btn:hover {
   color: white;
-  background: var(--azul-oscuro);
+  background: var(--azul-profundo);
 }
 
 a:focus-visible,
 button:focus-visible {
-  outline: 3px solid var(--celeste);
+  outline: 3px solid var(--naranja);
   outline-offset: 3px;
 }
 
+/* Curvas de los estatutos (arriba a la izquierda y abajo a la derecha) */
+.curva {
+  position: absolute;
+  width: min(30vw, 300px);
+  height: auto;
+  pointer-events: none;
+}
+
+.curva .forma {
+  fill: var(--azul-oscuro);
+}
+
+.curva .arco {
+  fill: none;
+  stroke: var(--naranja);
+  stroke-width: 16;
+  stroke-linecap: round;
+}
+
+.curva-sup {
+  top: 0;
+  left: 0;
+}
+
+.curva-inf {
+  bottom: 0;
+  right: 0;
+  transform: rotate(180deg);
+}
+
 .hero {
+  position: relative;
+  overflow: hidden;
   min-height: 490px;
   display: flex;
   align-items: center;
@@ -86,21 +135,29 @@ button:focus-visible {
   color: white;
   background:
     linear-gradient(90deg,
-      rgba(8, 47, 73, 0.92),
-      rgba(7, 89, 133, 0.55)),
+      rgba(0, 38, 94, 0.92),
+      rgba(0, 51, 128, 0.55)),
     url("img/cari.jpg")
     center/cover;
   background-color: var(--azul-oscuro);
 }
 
+/* En la portada la curva azul se vuelve celeste y translúcida para no tapar la foto */
+.hero .curva .forma {
+  fill: var(--azul-claro);
+  opacity: 0.4;
+}
+
 .hero-content {
+  position: relative;
+  z-index: 1;
   max-width: 650px;
 }
 
 .etiqueta {
   display: inline-block;
   background: #ffffff25;
-  border: 1px solid #ffffff60;
+  border: 1px solid var(--naranja);
   padding: 7px 14px;
   border-radius: 20px;
   margin-bottom: 18px;
@@ -121,9 +178,10 @@ button:focus-visible {
 
 .btn {
   display: inline-block;
-  background: var(--celeste);
+  background: var(--azul-claro);
   color: var(--azul-oscuro);
-  padding: 13px 25px;
+  border: 2px solid var(--azul-claro);
+  padding: 11px 25px;
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
@@ -153,6 +211,17 @@ section {
   margin-bottom: 12px;
 }
 
+/* Línea naranja debajo de cada título */
+.titulo::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: var(--naranja);
+  border-radius: 4px;
+  margin: 10px auto 0;
+}
+
 .descripcion {
   max-width: 650px;
   text-align: center;
@@ -170,13 +239,15 @@ section {
   background: white;
   padding: 27px;
   border-radius: 15px;
-  border: 1px solid #dbeafe;
+  border: 1px solid var(--borde);
+  border-top: 4px solid var(--azul-claro);
   transition: 0.3s;
 }
 
 .tarjeta:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px #07598515;
+  border-top-color: var(--naranja);
+  box-shadow: 0 10px 25px #00338018;
 }
 
 .icono {
@@ -185,7 +256,7 @@ section {
 }
 
 .tarjeta h3 {
-  color: var(--azul);
+  color: var(--azul-oscuro);
   margin-bottom: 10px;
 }
 
@@ -198,14 +269,14 @@ section {
 }
 
 .expandible:focus-visible {
-  outline: 3px solid var(--celeste);
+  outline: 3px solid var(--naranja);
   outline-offset: 3px;
 }
 
 .pista {
   display: inline-block;
   margin-top: 12px;
-  color: var(--azul);
+  color: var(--azul-oscuro);
   font-size: 0.9rem;
   font-weight: bold;
 }
@@ -223,7 +294,7 @@ section {
 
 .extra ul {
   list-style: none;
-  border-top: 1px solid #dbeafe;
+  border-top: 1px solid var(--borde);
   padding-top: 14px;
 }
 
@@ -249,16 +320,16 @@ section {
   display: flex;
   align-items: stretch;
   background: white;
-  border: 1px solid #dbeafe;
+  border: 1px solid var(--borde);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 8px 25px #07598515;
+  box-shadow: 0 8px 25px #00338015;
 }
 
 .porque-imagen {
   flex: 1 1 45%;
   min-height: 360px;
-  background: var(--azul);
+  background: var(--azul-oscuro);
 }
 
 .porque-imagen img {
@@ -298,7 +369,7 @@ section {
 }
 
 .porque-lista h3 {
-  color: var(--azul);
+  color: var(--azul-oscuro);
   margin-bottom: 2px;
 }
 
@@ -320,7 +391,8 @@ section {
   background: white;
   padding: 27px;
   border-radius: 15px;
-  border: 1px solid #dbeafe;
+  border: 1px solid var(--borde);
+  border-top: 4px solid var(--azul-claro);
   text-align: center;
 }
 
@@ -329,7 +401,8 @@ section {
   height: 110px;
   margin: 0 auto 16px;
   border-radius: 50%;
-  background: var(--azul);
+  background: var(--azul-oscuro);
+  border: 4px solid var(--naranja);
   color: white;
   display: flex;
   align-items: center;
@@ -345,7 +418,7 @@ section {
 }
 
 .persona .cargo {
-  color: var(--azul);
+  color: var(--naranja-texto);
   font-weight: bold;
   font-size: 0.95rem;
   margin-bottom: 8px;
@@ -353,6 +426,7 @@ section {
 
 .llamada {
   background: var(--azul-oscuro);
+  border-top: 6px solid var(--naranja);
   color: white;
   padding: 45px 25px;
   border-radius: 20px;
@@ -382,7 +456,7 @@ section {
   scroll-behavior: smooth;
   border-radius: 16px;
   scrollbar-width: none;
-  box-shadow: 0 8px 25px #07598520;
+  box-shadow: 0 8px 25px #00338020;
 }
 
 .carrusel-pista::-webkit-scrollbar {
@@ -394,7 +468,7 @@ section {
   scroll-snap-align: center;
   position: relative;
   aspect-ratio: 16 / 9;
-  background: var(--azul);
+  background: var(--azul-oscuro);
 }
 
 .diapositiva img {
@@ -412,7 +486,7 @@ section {
   padding: 36px 22px 16px;
   color: white;
   font-weight: bold;
-  background: linear-gradient(transparent, rgba(8, 47, 73, 0.85));
+  background: linear-gradient(transparent, rgba(0, 38, 94, 0.88));
 }
 
 .carrusel-btn {
@@ -428,12 +502,12 @@ section {
   font-size: 1.6rem;
   line-height: 1;
   cursor: pointer;
-  box-shadow: 0 2px 10px #082f4940;
+  box-shadow: 0 2px 10px #00338040;
   transition: 0.3s;
 }
 
 .carrusel-btn:hover {
-  background: var(--celeste);
+  background: var(--azul-claro);
 }
 
 .carrusel-btn.anterior { left: 12px; }
@@ -451,13 +525,13 @@ section {
   height: 14px;
   border: none;
   border-radius: 50%;
-  background: #bae6fd;
+  background: #cfe4f8;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .punto.activo {
-  background: var(--azul);
+  background: var(--naranja);
   transform: scale(1.25);
 }
 
@@ -473,7 +547,8 @@ section {
   background: white;
   padding: 30px;
   border-radius: 16px;
-  border: 1px solid #dbeafe;
+  border: 1px solid var(--borde);
+  border-top: 4px solid var(--azul-claro);
   text-align: center;
 }
 
@@ -512,37 +587,71 @@ section {
 .red {
   display: inline-block;
   padding: 10px 18px;
-  border: 2px solid var(--azul);
+  border: 2px solid var(--azul-oscuro);
   border-radius: 25px;
-  color: var(--azul);
+  color: var(--azul-oscuro);
   font-weight: bold;
   text-decoration: none;
   transition: 0.3s;
 }
 
 .red:hover {
-  background: var(--azul);
+  background: var(--azul-oscuro);
   color: white;
 }
 
+/* Pie de página con el estilo de los estatutos: fondo blanco, título azul,
+   NIT en naranja y datos de contacto en azul y negrita */
 footer {
-  background: var(--azul-oscuro);
-  color: white;
+  position: relative;
+  overflow: hidden;
+  background: white;
+  border-top: 3px solid var(--naranja);
+  color: var(--azul-oscuro);
   text-align: center;
-  padding: 30px 20px;
+  padding: 38px 20px 60px;
+}
+
+footer > :not(.curva) {
+  position: relative;
+  z-index: 1;
+}
+
+footer h3 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
 }
 
 footer p {
   margin-top: 5px;
 }
 
+.footer-legal {
+  color: var(--naranja-texto);
+  font-size: 0.9rem;
+}
+
+.footer-contacto {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-top: 14px;
+}
+
 footer a {
-  color: var(--celeste);
+  color: var(--azul-oscuro);
+  font-weight: bold;
   text-decoration: none;
 }
 
 footer a:hover {
   text-decoration: underline;
+}
+
+footer .copy {
+  margin-top: 14px;
+  font-size: 0.85rem;
+  color: var(--texto);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -566,6 +675,10 @@ footer a:hover {
 
   nav a {
     font-size: 0.88rem;
+  }
+
+  .curva {
+    width: 100px;
   }
 
   .hero {
@@ -610,6 +723,15 @@ footer a:hover {
     min-height: 0;
     aspect-ratio: 4 / 3;
   }
+
+  .porque-info {
+    padding: 28px 22px;
+  }
+
+  footer {
+    padding-bottom: 90px;
+  }
+}
 
   .porque-info {
     padding: 28px 22px;
