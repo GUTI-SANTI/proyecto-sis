@@ -8,13 +8,13 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Colores del club (tomados de los estatutos) */
+/* Colores del club (de los estatutos) */
 :root {
   --naranja: #F15D13;
-  --naranja-texto: #C24A0A;   /* naranja más oscuro, para texto pequeño que se lea bien */
+  --naranja-texto: #C24A0A;   /* naranja más oscuro para texto pequeño, se lee mejor */
   --azul-claro: #5BACEB;
   --azul-oscuro: #003380;
-  --azul-profundo: #00265e;   /* para hover y fondos más oscuros */
+  --azul-profundo: #00265e;   /* para hover y fondos oscuros */
   --fondo: #f2f8fe;
   --blanco: #ffffff;
   --texto: #334155;
@@ -26,18 +26,6 @@ body {
   background: var(--fondo);
   color: var(--texto);
   line-height: 1.6;
-}
-
-/* Marca de agua del pez (como en los estatutos). Para usar el logo real,
-   cambia el url(...) por url("img/logo.png") */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  opacity: 0.07;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 140'%3E%3Cpath fill='%23777' d='M20 66C50 14 122 10 162 56L194 30L188 66L194 102L162 78C122 124 50 118 20 66Z'/%3E%3Ccircle cx='54' cy='58' r='8' fill='%23fff'/%3E%3Cpath fill='none' stroke='%23777' stroke-width='7' stroke-linecap='round' d='M8 124q21-16 42 0t42 0t42 0t42 0'/%3E%3C/svg%3E") center / min(75vw, 560px) no-repeat;
 }
 
 header {
@@ -95,39 +83,7 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
-/* Curvas de los estatutos (arriba a la izquierda y abajo a la derecha) */
-.curva {
-  position: absolute;
-  width: min(30vw, 300px);
-  height: auto;
-  pointer-events: none;
-}
-
-.curva .forma {
-  fill: var(--azul-oscuro);
-}
-
-.curva .arco {
-  fill: none;
-  stroke: var(--naranja);
-  stroke-width: 16;
-  stroke-linecap: round;
-}
-
-.curva-sup {
-  top: 0;
-  left: 0;
-}
-
-.curva-inf {
-  bottom: 0;
-  right: 0;
-  transform: rotate(180deg);
-}
-
 .hero {
-  position: relative;
-  overflow: hidden;
   min-height: 490px;
   display: flex;
   align-items: center;
@@ -142,15 +98,7 @@ button:focus-visible {
   background-color: var(--azul-oscuro);
 }
 
-/* En la portada la curva azul se vuelve celeste y translúcida para no tapar la foto */
-.hero .curva .forma {
-  fill: var(--azul-claro);
-  opacity: 0.4;
-}
-
 .hero-content {
-  position: relative;
-  z-index: 1;
   max-width: 650px;
 }
 
@@ -600,58 +548,26 @@ section {
   color: white;
 }
 
-/* Pie de página con el estilo de los estatutos: fondo blanco, título azul,
-   NIT en naranja y datos de contacto en azul y negrita */
 footer {
-  position: relative;
-  overflow: hidden;
-  background: white;
-  border-top: 3px solid var(--naranja);
-  color: var(--azul-oscuro);
+  background: var(--azul-profundo);
+  border-top: 6px solid var(--naranja);
+  color: white;
   text-align: center;
-  padding: 38px 20px 60px;
-}
-
-footer > :not(.curva) {
-  position: relative;
-  z-index: 1;
-}
-
-footer h3 {
-  font-size: 1.6rem;
-  font-weight: 400;
-  letter-spacing: 0.04em;
+  padding: 30px 20px;
 }
 
 footer p {
   margin-top: 5px;
 }
 
-.footer-legal {
-  color: var(--naranja-texto);
-  font-size: 0.9rem;
-}
-
-.footer-contacto {
-  font-weight: bold;
-  font-size: 0.9rem;
-  margin-top: 14px;
-}
-
 footer a {
-  color: var(--azul-oscuro);
+  color: var(--azul-claro);
   font-weight: bold;
   text-decoration: none;
 }
 
 footer a:hover {
   text-decoration: underline;
-}
-
-footer .copy {
-  margin-top: 14px;
-  font-size: 0.85rem;
-  color: var(--texto);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -675,10 +591,6 @@ footer .copy {
 
   nav a {
     font-size: 0.88rem;
-  }
-
-  .curva {
-    width: 100px;
   }
 
   .hero {
@@ -723,15 +635,6 @@ footer .copy {
     min-height: 0;
     aspect-ratio: 4 / 3;
   }
-
-  .porque-info {
-    padding: 28px 22px;
-  }
-
-  footer {
-    padding-bottom: 90px;
-  }
-}
 
   .porque-info {
     padding: 28px 22px;
