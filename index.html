@@ -11,41 +11,46 @@
 </head>
 <body>
 
-  <header>
-    <a href="#inicio" class="logo">🐟 Caribes Acuáticos</a>
-
-    <nav aria-label="Menú principal">
-      <a href="#inicio">Inicio</a>
-      <a href="#quienes-somos">Quiénes somos?</a>
-      <a href="#ubicacion">Dónde estamos ubicados</a>
-      <a href="#programas">Programas</a>
-      <a href="#equipo">Nuestro Equipo</a>
-      <a href="#redes" class="nav-btn">Ven e inscríbete</a>
+  <header class="site-header">
+    <div class="encabezado-superior">
+      <a href="#inicio" class="marca" aria-label="Caribes Acuáticos, ir al inicio">
+        <span class="marca-logo" aria-hidden="true">🐠</span>
+        <span class="marca-texto"><span>Caribes</span><span>Acuáticos</span></span>
+      </a>
 
       <button class="carrito-btn" id="abrir-tienda" type="button"
         aria-label="Abrir tienda" aria-controls="panel-tienda" aria-expanded="false">
-        <svg class="carrito-icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M3 4h2l2.2 11.1a2 2 0 0 0 2 1.6h8.3a2 2 0 0 0 1.9-1.4L21 9H6" />
-          <circle cx="10" cy="20" r="1.3" />
-          <circle cx="18" cy="20" r="1.3" />
-        </svg>
+        <span class="carrito-circulo" aria-hidden="true">
+          <svg class="carrito-icono" viewBox="0 0 24 24" focusable="false">
+            <path d="M3 4h2l2.2 11.1a2 2 0 0 0 2 1.6h8.3a2 2 0 0 0 1.9-1.4L21 9H6" />
+            <circle cx="10" cy="20" r="1.3" />
+            <circle cx="18" cy="20" r="1.3" />
+          </svg>
+        </span>
+        <span class="carrito-etiqueta">TIENDA</span>
       </button>
+    </div>
+
+    <nav class="menu-principal" aria-label="Menú principal">
+      <a href="#inicio" class="menu-enlace">Inicio</a>
+      <a href="#quienes-somos" class="menu-enlace">Quiénes somos</a>
+      <a href="#ubicacion" class="menu-enlace">Dónde estamos ubicados</a>
+      <a href="#programas" class="menu-enlace">Programas</a>
+      <a href="#equipo" class="menu-enlace">Nuestro equipo</a>
+      <a href="#redes" class="menu-enlace menu-inscripcion">Ven e inscríbete</a>
     </nav>
   </header>
 
-  <!-- 1. PORTADA DE LA PAG -->
+  <!-- 1. PORTADA -->
   <section class="hero" id="inicio">
     <div class="hero-content">
       <span class="etiqueta">CLUB DE NATACIÓN</span>
-
       <h1>Más que un club, un estilo de vida</h1>
-
       <p>
         Aprende a nadar, mejora tu técnica y alcanza tus metas
         con un equipo que te acompaña en cada brazada.
         ¡Tenemos un espacio para ti!
       </p>
-
       <a href="#redes" class="btn">Quiero inscribirme →</a>
     </div>
   </section>
@@ -55,7 +60,6 @@
     <!-- 2. QUIÉNES SOMOS -->
     <section id="quienes-somos">
       <h2 class="titulo">Quiénes somos</h2>
-
       <p class="descripcion">Somos Caribes Acuáticos</p>
 
       <div class="porque-bloques">
@@ -109,7 +113,6 @@
           <div class="porque-imagen">
             <img src="img/nosotros2.jpg" alt="Misión del club Caribes Acuáticos" loading="lazy">
           </div>
-
           <div class="porque-info">
             <span class="icono">🎯</span>
             <h3 class="porque-titulo">Nuestra misión</h3>
@@ -122,7 +125,6 @@
           <div class="porque-imagen">
             <img src="img/nosotros3.jpg" alt="Visión del club Caribes Acuáticos" loading="lazy">
           </div>
-
           <div class="porque-info">
             <span class="icono">👁️</span>
             <h3 class="porque-titulo">Nuestra visión</h3>
@@ -133,42 +135,35 @@
       </div>
     </section>
 
-    <!-- 3. GALERÍA DE FOTOS -->
+    <!-- 3. GALERÍA -->
     <section id="galeria">
       <h2 class="titulo">Conoce nuestro club</h2>
-
       <p class="descripcion">
         Un vistazo a nuestras clases, entrenamientos y momentos especiales.
       </p>
 
       <div class="carrusel" role="region" aria-roledescription="carrusel" aria-label="Fotos del club">
         <div class="carrusel-pista">
-
           <figure class="diapositiva">
             <img src="img/club1.jpg" alt="Niños en clase de natación">
             <figcaption>Clases de natación infantil</figcaption>
           </figure>
-
           <figure class="diapositiva">
             <img src="img/club2.jpg" alt="Nadadores entrenando en la piscina" loading="lazy">
             <figcaption>Entrenamientos deportivos</figcaption>
           </figure>
-
           <figure class="diapositiva">
             <img src="img/club3.jpg" alt="Equipo del club en una competencia" loading="lazy">
             <figcaption>Competencias y torneos</figcaption>
           </figure>
-
           <figure class="diapositiva">
             <img src="img/club4.jpg" alt="Adultos en clase de natación" loading="lazy">
             <figcaption>Natación para adultos</figcaption>
           </figure>
-
           <figure class="diapositiva">
             <img src="img/club5.jpg" alt="Instalaciones de la piscina del club" loading="lazy">
             <figcaption>Nuestras instalaciones</figcaption>
           </figure>
-
         </div>
 
         <button type="button" class="carrusel-btn anterior" aria-label="Foto anterior">‹</button>
@@ -181,7 +176,6 @@
     <!-- 4. UBICACIÓN -->
     <section id="ubicacion">
       <h2 class="titulo">¿Dónde estamos ubicados?</h2>
-
       <p class="descripcion">
         Ven a conocer nuestras instalaciones y entrena en una piscina olímpica.
       </p>
@@ -200,7 +194,6 @@
                 <p>Carrera 33 con calle 37 - 67, Barrio San Fernando (Complejo Acuático José Eustasio Rivera), Villavicencio, Meta</p>
               </div>
             </li>
-
             <li>
               <span class="icono">🕒</span>
               <div>
@@ -208,7 +201,6 @@
                 <p>Escribe aquí los horarios de entrenamiento</p>
               </div>
             </li>
-
             <li>
               <span class="icono">🏊</span>
               <div>
@@ -226,7 +218,6 @@
     <!-- 5. BENEFICIOS -->
     <section id="beneficios">
       <h2 class="titulo">¿Por qué elegir a Caribes?</h2>
-
       <p class="descripcion">
         Queremos que cada alumno disfrute el proceso,
         aprenda con confianza y avance a su propio ritmo.
@@ -252,26 +243,22 @@
     <!-- 6. PROGRAMAS -->
     <section id="programas">
       <h2 class="titulo">Encuentra tu programa ideal</h2>
-
       <p class="descripcion">Ofrecemos opciones</p>
 
       <div class="programas">
-
         <article class="tarjeta expandible" tabindex="0">
           <div class="icono">🐬</div>
           <h3>Natación infantil</h3>
           <p>Actividad sana</p>
           <span class="pista">+ Ver más</span>
-          <div class="extra">
-            <div>
-              <ul>
-                <li><strong>Edades:</strong> de 4 a 12 años</li>
-                <li><strong>Horarios:</strong> lunes a viernes, 4:00 p. m. a 6:00 p. m.</li>
-                <li><strong>Grupos:</strong> pequeños, por nivel</li>
-                <li><strong>Incluye:</strong> evaluación inicial y seguimiento</li>
-              </ul>
-            </div>
-          </div>
+          <div class="extra"><div>
+            <ul>
+              <li><strong>Edades:</strong> de 4 a 12 años</li>
+              <li><strong>Horarios:</strong> lunes a viernes, 4:00 p. m. a 6:00 p. m.</li>
+              <li><strong>Grupos:</strong> pequeños, por nivel</li>
+              <li><strong>Incluye:</strong> evaluación inicial y seguimiento</li>
+            </ul>
+          </div></div>
         </article>
 
         <article class="tarjeta expandible" tabindex="0">
@@ -279,16 +266,14 @@
           <h3>Clases para principiantes</h3>
           <p>Aprende desde cero</p>
           <span class="pista">+ Ver más</span>
-          <div class="extra">
-            <div>
-              <ul>
-                <li><strong>Para:</strong> cualquier edad, sin experiencia</li>
-                <li><strong>Horarios:</strong> mañana y tarde</li>
-                <li><strong>Aprenderás:</strong> respiración, flotación y primeras brazadas</li>
-                <li><strong>Duración:</strong> 1 hora por sesión</li>
-              </ul>
-            </div>
-          </div>
+          <div class="extra"><div>
+            <ul>
+              <li><strong>Para:</strong> cualquier edad, sin experiencia</li>
+              <li><strong>Horarios:</strong> mañana y tarde</li>
+              <li><strong>Aprenderás:</strong> respiración, flotación y primeras brazadas</li>
+              <li><strong>Duración:</strong> 1 hora por sesión</li>
+            </ul>
+          </div></div>
         </article>
 
         <article class="tarjeta expandible" tabindex="0">
@@ -296,16 +281,14 @@
           <h3>Entrenamiento deportivo</h3>
           <p>Perfecciona tus estilos</p>
           <span class="pista">+ Ver más</span>
-          <div class="extra">
-            <div>
-              <ul>
-                <li><strong>Para:</strong> nadadores con nivel intermedio</li>
-                <li><strong>Horarios:</strong> lunes a sábado, temprano en la mañana</li>
-                <li><strong>Trabajo:</strong> técnica, resistencia y velocidad</li>
-                <li><strong>Meta:</strong> participar en torneos</li>
-              </ul>
-            </div>
-          </div>
+          <div class="extra"><div>
+            <ul>
+              <li><strong>Para:</strong> nadadores con nivel intermedio</li>
+              <li><strong>Horarios:</strong> lunes a sábado, temprano en la mañana</li>
+              <li><strong>Trabajo:</strong> técnica, resistencia y velocidad</li>
+              <li><strong>Meta:</strong> participar en torneos</li>
+            </ul>
+          </div></div>
         </article>
 
         <article class="tarjeta expandible" tabindex="0">
@@ -313,25 +296,21 @@
           <h3>Natación para adultos</h3>
           <p>Mejora tu condición física</p>
           <span class="pista">+ Ver más</span>
-          <div class="extra">
-            <div>
-              <ul>
-                <li><strong>Para:</strong> mayores de 18 años</li>
-                <li><strong>Horarios:</strong> noches y fines de semana</li>
-                <li><strong>Niveles:</strong> desde perder el miedo hasta mejorar la técnica</li>
-                <li><strong>Beneficios:</strong> bajo impacto y mejor condición física</li>
-              </ul>
-            </div>
-          </div>
+          <div class="extra"><div>
+            <ul>
+              <li><strong>Para:</strong> mayores de 18 años</li>
+              <li><strong>Horarios:</strong> noches y fines de semana</li>
+              <li><strong>Niveles:</strong> desde perder el miedo hasta mejorar la técnica</li>
+              <li><strong>Beneficios:</strong> bajo impacto y mejor condición física</li>
+            </ul>
+          </div></div>
         </article>
-
       </div>
     </section>
 
     <!-- 7. EQUIPO -->
     <section id="equipo">
       <h2 class="titulo">Nuestro equipo</h2>
-
       <p class="descripcion">
         Entrenadores comprometidos con tu proceso, dentro y fuera del agua.
       </p>
@@ -343,21 +322,18 @@
           <p class="cargo">Director y entrenador</p>
           <p>Breve descripción de su experiencia y formación.</p>
         </article>
-
         <article class="persona">
           <div class="avatar">NA</div>
           <h3>Nombre Apellido</h3>
           <p class="cargo">Entrenador de natación infantil</p>
           <p>Breve descripción de su experiencia y formación.</p>
         </article>
-
         <article class="persona">
           <div class="avatar">NA</div>
           <h3>Nombre Apellido</h3>
           <p class="cargo">Entrenador deportivo</p>
           <p>Breve descripción de su experiencia y formación.</p>
         </article>
-
         <article class="persona">
           <div class="avatar">NA</div>
           <h3>Nombre Apellido</h3>
@@ -370,19 +346,16 @@
     <!-- 8. INVITACIÓN -->
     <section class="llamada">
       <h2>¡Es tu momento de entrar al agua!</h2>
-
       <p>
         Da el primer paso y conoce nuestros programas.
         Escríbenos para consultar horarios, precios y disponibilidad.
       </p>
-
       <a href="#redes" class="btn">Solicitar información</a>
     </section>
 
     <!-- 9. REDES Y CONTACTO -->
     <section id="redes">
       <h2 class="titulo">Inscríbete y síguenos</h2>
-
       <p class="descripcion">Para inscribirte o resolver dudas</p>
 
       <div class="redes">
@@ -541,18 +514,10 @@
       marcarPunto();
 
       var carrusel = document.querySelector('.carrusel');
-      carrusel.addEventListener('mouseenter', function () {
-        pausado = true;
-      });
-      carrusel.addEventListener('mouseleave', function () {
-        pausado = false;
-      });
-      carrusel.addEventListener('focusin', function () {
-        pausado = true;
-      });
-      carrusel.addEventListener('focusout', function () {
-        pausado = false;
-      });
+      carrusel.addEventListener('mouseenter', function () { pausado = true; });
+      carrusel.addEventListener('mouseleave', function () { pausado = false; });
+      carrusel.addEventListener('focusin', function () { pausado = true; });
+      carrusel.addEventListener('focusout', function () { pausado = false; });
 
       var menosMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (!menosMovimiento) {
@@ -564,7 +529,7 @@
       }
     })();
 
-    // Cambiar texto e imagen de cada momento de la historia.
+    // Cambiar el texto y la imagen de cada momento de la historia.
     (function () {
       var linea = document.querySelector('.linea-tiempo');
       if (!linea) return;
