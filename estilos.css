@@ -921,32 +921,40 @@ nav {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
-  flex: 0 0 56px;
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
   margin-left: auto;
-  padding: 8px;
-  border: 3px solid white;
+  padding: 10px;
+  border: 3px solid var(--naranja);
   border-radius: 50%;
-  background: var(--naranja);
-  color: white;
-  font-size: 1.7rem;
+  background: white;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.24);
-  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 38, 94, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .carrito-btn:hover {
   transform: translateY(-2px) scale(1.05);
-  background: var(--naranja-texto);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  background: var(--fondo);
+  box-shadow: 0 6px 16px rgba(0, 38, 94, 0.28);
+}
+
+.carrito-icono {
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: var(--azul-oscuro);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .tienda-fondo {
   position: fixed;
   inset: 0;
   z-index: 1000;
-  background: rgba(0, 20, 50, 0.55);
+  background: rgba(0, 20, 50, 0.58);
 }
 
 .tienda-fondo[hidden] {
@@ -960,15 +968,19 @@ nav {
   right: 0;
   display: flex;
   flex-direction: column;
-  width: min(390px, 88vw);
+  width: 50vw;
+  max-width: 640px;
+  min-width: 340px;
   height: 100vh;
   height: 100dvh;
-  padding: 34px 28px;
-  background: white;
-  box-shadow: -8px 0 30px rgba(0, 38, 94, 0.2);
+  padding: 34px;
+  overflow-y: auto;
+  background: var(--fondo);
+  border-left: 6px solid var(--naranja);
+  box-shadow: -10px 0 32px rgba(0, 38, 94, 0.24);
   transform: translateX(105%);
   visibility: hidden;
-  transition: transform 0.3s ease, visibility 0.3s ease;
+  transition: transform 0.35s ease, visibility 0.35s ease;
 }
 
 .tienda-panel.abierto {
@@ -976,49 +988,77 @@ nav {
   visibility: visible;
 }
 
-.tienda-panel h2 {
-  padding-bottom: 14px;
-  border-bottom: 3px solid var(--naranja);
-  color: var(--azul-oscuro);
-  font-size: 1.7rem;
-}
-
 .tienda-cerrar {
   align-self: flex-end;
-  width: 42px;
-  height: 42px;
-  margin: -12px -8px 12px 0;
-  border: 0;
+  width: 46px;
+  height: 46px;
+  margin: -8px -8px 12px 0;
+  border: 2px solid var(--borde);
   border-radius: 50%;
-  background: var(--fondo);
+  background: white;
   color: var(--azul-oscuro);
   font-size: 1.8rem;
   line-height: 1;
   cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .tienda-cerrar:hover {
   background: var(--azul-claro);
+  transform: rotate(90deg);
 }
 
-.tienda-proximamente {
+.tienda-contenido {
   display: flex;
   flex: 1;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  padding: 42px 30px;
+  border: 1px solid var(--borde);
+  border-top: 6px solid var(--azul-claro);
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 8px 25px rgba(0, 51, 128, 0.09);
   text-align: center;
 }
 
-.tienda-pez {
-  font-size: 4.5rem;
+.tienda-etiqueta {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 7px 15px;
+  border: 1px solid var(--naranja);
+  border-radius: 20px;
+  background: var(--fondo);
+  color: var(--azul-oscuro);
+  font-size: 0.82rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
 }
 
-.tienda-coming-soon {
+.tienda-contenido h2 {
   color: var(--azul-oscuro);
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1.2;
+}
+
+.tienda-contenido h2 span {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.tienda-separador {
+  width: 72px;
+  height: 4px;
+  margin: 20px auto;
+  border-radius: 4px;
+  background: var(--naranja);
+}
+
+.tienda-mensaje {
+  max-width: 360px;
+  color: var(--texto);
+  font-size: 1.1rem;
 }
 
 body.tienda-abierta {
@@ -1026,8 +1066,11 @@ body.tienda-abierta {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .momento-tiempo::before,
+  .historia-imagen,
   .carrito-btn,
-  .tienda-panel {
+  .tienda-panel,
+  .tienda-cerrar {
     transition: none;
   }
 }
@@ -1037,5 +1080,15 @@ body.tienda-abierta {
     width: 54px;
     height: 54px;
     flex-basis: 54px;
+  }
+
+  .tienda-panel {
+    width: 88vw;
+    min-width: 0;
+    padding: 24px 18px;
+  }
+
+  .tienda-contenido {
+    padding: 30px 20px;
   }
 }
