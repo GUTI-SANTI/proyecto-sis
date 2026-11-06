@@ -4,12 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#003380">
-
-  <meta name="description"
-    content="Caribes Acuáticos Club de Natación. Más que un club y un deporte, un estilo de vida.">
-
+  <meta name="description" content="Caribes Acuáticos Club de Natación. Más que un club y un deporte, un estilo de vida.">
   <title>Caribes Acuáticos | Club de Natación</title>
-
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🐟%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="estilos.css">
 </head>
@@ -17,7 +13,6 @@
 
   <header>
     <a href="#inicio" class="logo">🐟 Caribes Acuáticos</a>
-
     <nav aria-label="Menú principal">
       <a href="#inicio">Inicio</a>
       <a href="#quienes-somos">Quiénes somos?</a>
@@ -25,46 +20,39 @@
       <a href="#programas">Programas</a>
       <a href="#equipo">Nuestro Equipo</a>
       <a href="#redes" class="nav-btn">Ven e inscríbete</a>
+      <button class="carrito-btn" id="abrir-tienda" type="button" aria-label="Abrir tienda" aria-controls="panel-tienda" aria-expanded="false">
+        <span aria-hidden="true">🛒</span>
+      </button>
     </nav>
   </header>
 
-  <!-- 1. PORTADA DE LA PAG -->
+  <!-- 1. PORTADA -->
   <section class="hero" id="inicio">
     <div class="hero-content">
       <span class="etiqueta">CLUB DE NATACIÓN</span>
-
       <h1>Más que un club, un estilo de vida</h1>
-
       <p>
         Aprende a nadar, mejora tu técnica y alcanza tus metas
         con un equipo que te acompaña en cada brazada.
         ¡Tenemos un espacio para ti!
       </p>
-
       <a href="#redes" class="btn">Quiero inscribirme →</a>
     </div>
   </section>
 
   <main>
 
-    <!-- 2. QUIÉNES SOMOS (VISIÓN, MISIÓN E HISTORIA) -->
+    <!-- 2. QUIÉNES SOMOS -->
     <section id="quienes-somos">
       <h2 class="titulo">Quiénes somos</h2>
-
-      <p class="descripcion">
-        Somos Caribes Acuáticos
-      </p>
+      <p class="descripcion">Somos Caribes Acuáticos</p>
 
       <div class="porque-bloques">
 
         <!-- HISTORIA DEL CLUB -->
         <div class="porque invertido">
           <div class="porque-imagen">
-            <img
-              class="historia-imagen"
-              src="img/nosotros1.jpg"
-              alt="Historia del club Caribes Acuáticos"
-              loading="lazy">
+            <img class="historia-imagen" src="img/nosotros1.jpg" alt="Historia del club Caribes Acuáticos" loading="lazy">
           </div>
 
           <div class="porque-info">
@@ -75,45 +63,28 @@
               <p class="linea-tiempo-ayuda">Selecciona un momento para conocer más:</p>
 
               <div class="linea-tiempo-puntos" role="group" aria-label="Momentos de la historia">
-                <button
-                  class="momento-tiempo activo"
-                  type="button"
-                  aria-pressed="true"
+                <button class="momento-tiempo activo" type="button" aria-pressed="true"
                   data-titulo="Fundación del club"
                   data-texto="Reconocimiento de personería jurídica el 20 de diciembre de 2018."
                   data-imagen="img/nosotros1.jpg"
-                  data-alt="Historia del club Caribes Acuáticos: fundación y reconocimiento jurídico">
-                  2018
-                </button>
+                  data-alt="Historia del club Caribes Acuáticos: fundación y reconocimiento jurídico">2018</button>
 
-                <button
-                  class="momento-tiempo"
-                  type="button"
-                  aria-pressed="false"
+                <button class="momento-tiempo" type="button" aria-pressed="false"
                   data-titulo="[Agrega aquí el nombre de este momento]"
                   data-texto="[Escribe aquí un acontecimiento verificable y su fecha.]"
                   data-imagen="img/nosotros2.jpg"
-                  data-alt="[Reemplaza por una imagen de este momento histórico]">
-                  [Etapa 2]
-                </button>
+                  data-alt="[Reemplaza por una imagen de este momento histórico]">[Etapa 2]</button>
 
-                <button
-                  class="momento-tiempo"
-                  type="button"
-                  aria-pressed="false"
+                <button class="momento-tiempo" type="button" aria-pressed="false"
                   data-titulo="[Agrega aquí el nombre de este momento]"
                   data-texto="[Escribe aquí un acontecimiento verificable y su fecha.]"
                   data-imagen="img/nosotros3.jpg"
-                  data-alt="[Reemplaza por una imagen de este momento histórico]">
-                  [Etapa 3]
-                </button>
+                  data-alt="[Reemplaza por una imagen de este momento histórico]">[Etapa 3]</button>
               </div>
 
               <div class="momento-detalle" aria-live="polite" aria-atomic="true">
                 <h4 class="momento-titulo">Fundación del club</h4>
-                <p class="momento-texto">
-                  Reconocimiento de personería jurídica el 20 de diciembre de 2018.
-                </p>
+                <p class="momento-texto">Reconocimiento de personería jurídica el 20 de diciembre de 2018.</p>
               </div>
             </div>
           </div>
@@ -124,7 +95,6 @@
           <div class="porque-imagen">
             <img src="img/nosotros2.jpg" alt="Misión del club Caribes Acuáticos" loading="lazy">
           </div>
-
           <div class="porque-info">
             <span class="icono">🎯</span>
             <h3 class="porque-titulo">Nuestra misión</h3>
@@ -137,7 +107,6 @@
           <div class="porque-imagen">
             <img src="img/nosotros3.jpg" alt="Visión del club Caribes Acuáticos" loading="lazy">
           </div>
-
           <div class="porque-info">
             <span class="icono">👁️</span>
             <h3 class="porque-titulo">Nuestra visión</h3>
@@ -148,42 +117,33 @@
       </div>
     </section>
 
-    <!-- 3. CONOCE NUESTRO CLUB (CARRUSEL DE FOTOS) -->
+    <!-- 3. GALERÍA -->
     <section id="galeria">
       <h2 class="titulo">Conoce nuestro club</h2>
-
-      <p class="descripcion">
-        Un vistazo a nuestras clases, entrenamientos y momentos especiales.
-      </p>
+      <p class="descripcion">Un vistazo a nuestras clases, entrenamientos y momentos especiales.</p>
 
       <div class="carrusel" role="region" aria-roledescription="carrusel" aria-label="Fotos del club">
         <div class="carrusel-pista">
-
           <figure class="diapositiva">
             <img src="img/club1.jpg" alt="Niños en clase de natación">
             <figcaption>Clases de natación infantil</figcaption>
           </figure>
-
           <figure class="diapositiva">
             <img src="img/club2.jpg" alt="Nadadores entrenando en la piscina" loading="lazy">
             <figcaption>Entrenamientos deportivos</figcaption>
           </figure>
-
           <figure class="diapositiva">
             <img src="img/club3.jpg" alt="Equipo del club en una competencia" loading="lazy">
             <figcaption>Competencias y torneos</figcaption>
           </figure>
-
           <figure class="diapositiva">
             <img src="img/club4.jpg" alt="Adultos en clase de natación" loading="lazy">
             <figcaption>Natación para adultos</figcaption>
           </figure>
-
           <figure class="diapositiva">
             <img src="img/club5.jpg" alt="Instalaciones de la piscina del club" loading="lazy">
             <figcaption>Nuestras instalaciones</figcaption>
           </figure>
-
         </div>
 
         <button type="button" class="carrusel-btn anterior" aria-label="Foto anterior">‹</button>
@@ -193,16 +153,12 @@
       <div class="puntos" id="puntos"></div>
     </section>
 
-    <!-- 4. ¿DÓNDE ESTAMOS UBICADOS? -->
+    <!-- 4. UBICACIÓN -->
     <section id="ubicacion">
       <h2 class="titulo">¿Dónde estamos ubicados?</h2>
-
-      <p class="descripcion">
-        Ven a conocer nuestras instalaciones y entrena en una piscina olímpica.
-      </p>
+      <p class="descripcion">Ven a conocer nuestras instalaciones y entrena en una piscina olímpica.</p>
 
       <div class="porque invertido">
-
         <div class="porque-imagen">
           <img src="img/piscina.jpg" alt="Piscina olímpica del club Caribes Acuáticos" loading="lazy">
         </div>
@@ -216,7 +172,6 @@
                 <p>Carrera 33 con calle 37 - 67, Barrio San Fernando (Complejo Acuático José Eustasio Rivera), Villavicencio, Meta</p>
               </div>
             </li>
-
             <li>
               <span class="icono">🕒</span>
               <div>
@@ -224,7 +179,6 @@
                 <p>Escribe aquí los horarios de entrenamiento</p>
               </div>
             </li>
-
             <li>
               <span class="icono">🏊</span>
               <div>
@@ -233,17 +187,14 @@
               </div>
             </li>
           </ul>
-
           <a href="https://www.google.com/maps" class="btn" target="_blank" rel="noopener noreferrer">Cómo llegar →</a>
         </div>
-
       </div>
     </section>
 
-    <!-- 5. ¿POR QUÉ ELEGIR A CARIBES? -->
+    <!-- 5. BENEFICIOS -->
     <section id="beneficios">
       <h2 class="titulo">¿Por qué elegir a Caribes?</h2>
-
       <p class="descripcion">
         Queremos que cada alumno disfrute el proceso,
         aprenda con confianza y avance a su propio ritmo.
@@ -252,7 +203,6 @@
       <div class="metas" tabindex="0" role="group" aria-label="Metas claras">
         <span class="metas-icono" aria-hidden="true">🎯</span>
         <span class="pista-img">+ Pasa el cursor para ver más</span>
-
         <div class="metas-detalle">
           <span class="icono">🎯</span>
           <h3 class="porque-titulo">Metas claras</h3>
@@ -266,31 +216,25 @@
       </div>
     </section>
 
-    <!-- 6. ENCUENTRA TU PROGRAMA IDEAL -->
+    <!-- 6. PROGRAMAS -->
     <section id="programas">
       <h2 class="titulo">Encuentra tu programa ideal</h2>
-
-      <p class="descripcion">
-        Ofrecemos opciones
-      </p>
+      <p class="descripcion">Ofrecemos opciones</p>
 
       <div class="programas">
-
         <article class="tarjeta expandible" tabindex="0">
           <div class="icono">🐬</div>
           <h3>Natación infantil</h3>
           <p>Actividad sana</p>
           <span class="pista">+ Ver más</span>
-          <div class="extra">
-            <div>
-              <ul>
-                <li><strong>Edades:</strong> de 4 a 12 años</li>
-                <li><strong>Horarios:</strong> lunes a viernes, 4:00 p. m. a 6:00 p. m.</li>
-                <li><strong>Grupos:</strong> pequeños, por nivel</li>
-                <li><strong>Incluye:</strong> evaluación inicial y seguimiento</li>
-              </ul>
-            </div>
-          </div>
+          <div class="extra"><div>
+            <ul>
+              <li><strong>Edades:</strong> de 4 a 12 años</li>
+              <li><strong>Horarios:</strong> lunes a viernes, 4:00 p. m. a 6:00 p. m.</li>
+              <li><strong>Grupos:</strong> pequeños, por nivel</li>
+              <li><strong>Incluye:</strong> evaluación inicial y seguimiento</li>
+            </ul>
+          </div></div>
         </article>
 
         <article class="tarjeta expandible" tabindex="0">
@@ -298,16 +242,14 @@
           <h3>Clases para principiantes</h3>
           <p>Aprende desde cero</p>
           <span class="pista">+ Ver más</span>
-          <div class="extra">
-            <div>
-              <ul>
-                <li><strong>Para:</strong> cualquier edad, sin experiencia</li>
-                <li><strong>Horarios:</strong> mañana y tarde</li>
-                <li><strong>Aprenderás:</strong> respiración, flotación y primeras brazadas</li>
-                <li><strong>Duración:</strong> 1 hora por sesión</li>
-              </ul>
-            </div>
-          </div>
+          <div class="extra"><div>
+            <ul>
+              <li><strong>Para:</strong> cualquier edad, sin experiencia</li>
+              <li><strong>Horarios:</strong> mañana y tarde</li>
+              <li><strong>Aprenderás:</strong> respiración, flotación y primeras brazadas</li>
+              <li><strong>Duración:</strong> 1 hora por sesión</li>
+            </ul>
+          </div></div>
         </article>
 
         <article class="tarjeta expandible" tabindex="0">
@@ -315,16 +257,14 @@
           <h3>Entrenamiento deportivo</h3>
           <p>Perfecciona tus estilos</p>
           <span class="pista">+ Ver más</span>
-          <div class="extra">
-            <div>
-              <ul>
-                <li><strong>Para:</strong> nadadores con nivel intermedio</li>
-                <li><strong>Horarios:</strong> lunes a sábado, temprano en la mañana</li>
-                <li><strong>Trabajo:</strong> técnica, resistencia y velocidad</li>
-                <li><strong>Meta:</strong> participar en torneos</li>
-              </ul>
-            </div>
-          </div>
+          <div class="extra"><div>
+            <ul>
+              <li><strong>Para:</strong> nadadores con nivel intermedio</li>
+              <li><strong>Horarios:</strong> lunes a sábado, temprano en la mañana</li>
+              <li><strong>Trabajo:</strong> técnica, resistencia y velocidad</li>
+              <li><strong>Meta:</strong> participar en torneos</li>
+            </ul>
+          </div></div>
         </article>
 
         <article class="tarjeta expandible" tabindex="0">
@@ -332,84 +272,67 @@
           <h3>Natación para adultos</h3>
           <p>Mejora tu condición física</p>
           <span class="pista">+ Ver más</span>
-          <div class="extra">
-            <div>
-              <ul>
-                <li><strong>Para:</strong> mayores de 18 años</li>
-                <li><strong>Horarios:</strong> noches y fines de semana</li>
-                <li><strong>Niveles:</strong> desde perder el miedo hasta mejorar la técnica</li>
-                <li><strong>Beneficios:</strong> bajo impacto y mejor condición física</li>
-              </ul>
-            </div>
-          </div>
+          <div class="extra"><div>
+            <ul>
+              <li><strong>Para:</strong> mayores de 18 años</li>
+              <li><strong>Horarios:</strong> noches y fines de semana</li>
+              <li><strong>Niveles:</strong> desde perder el miedo hasta mejorar la técnica</li>
+              <li><strong>Beneficios:</strong> bajo impacto y mejor condición física</li>
+            </ul>
+          </div></div>
         </article>
-
       </div>
     </section>
 
-    <!-- 7. NUESTRO EQUIPO -->
+    <!-- 7. EQUIPO -->
     <section id="equipo">
       <h2 class="titulo">Nuestro equipo</h2>
-
-      <p class="descripcion">
-        Entrenadores comprometidos con tu proceso, dentro y fuera del agua.
-      </p>
+      <p class="descripcion">Entrenadores comprometidos con tu proceso, dentro y fuera del agua.</p>
 
       <div class="equipo">
-
         <article class="persona">
           <div class="avatar">NA</div>
           <h3>Nombre Apellido</h3>
           <p class="cargo">Director y entrenador</p>
           <p>Breve descripción de su experiencia y formación.</p>
         </article>
-
         <article class="persona">
           <div class="avatar">NA</div>
           <h3>Nombre Apellido</h3>
           <p class="cargo">Entrenador de natación infantil</p>
           <p>Breve descripción de su experiencia y formación.</p>
         </article>
-
         <article class="persona">
           <div class="avatar">NA</div>
           <h3>Nombre Apellido</h3>
           <p class="cargo">Entrenador deportivo</p>
           <p>Breve descripción de su experiencia y formación.</p>
         </article>
-
         <article class="persona">
           <div class="avatar">NA</div>
           <h3>Nombre Apellido</h3>
           <p class="cargo">Entrenadora de natación para adultos</p>
           <p>Breve descripción de su experiencia y formación.</p>
         </article>
-
       </div>
     </section>
 
-    <!-- 8. ¡ES TU MOMENTO DE ENTRAR AL AGUA! -->
+    <!-- 8. INVITACIÓN -->
     <section class="llamada">
       <h2>¡Es tu momento de entrar al agua!</h2>
-
       <p>
         Da el primer paso y conoce nuestros programas.
         Escríbenos para consultar horarios, precios y disponibilidad.
       </p>
-
       <a href="#redes" class="btn">Solicitar información</a>
     </section>
 
-    <!-- 9. INSCRÍBETE Y SÍGUENOS -->
+    <!-- 9. REDES Y CONTACTO -->
     <section id="redes">
       <h2 class="titulo">Inscríbete y síguenos</h2>
-
-      <p class="descripcion">
-        Para inscribirte o resolver dudas
-      </p>
+      <p class="descripcion">Para inscribirte o resolver dudas</p>
 
       <div class="redes">
-
         <article class="redes-tarjeta">
           <div class="icono">💬</div>
           <h3>Habla con la secretaria</h3>
@@ -434,7 +357,6 @@
             <a class="red" href="https://www.facebook.com/tu_club" target="_blank" rel="noopener noreferrer">ⓕ Facebook</a>
           </div>
         </article>
-
       </div>
     </section>
 
@@ -451,7 +373,57 @@
     <p>© 2026 Caribes Acuáticos. Todos los derechos están reservados.</p>
   </footer>
 
+  <!-- Panel lateral de la tienda -->
+  <div class="tienda-fondo" id="tienda-fondo" hidden></div>
+  <aside class="tienda-panel" id="panel-tienda" aria-labelledby="tienda-titulo" aria-hidden="true" inert>
+    <button class="tienda-cerrar" id="cerrar-tienda" type="button" aria-label="Cerrar tienda">×</button>
+    <h2 id="tienda-titulo">Tienda</h2>
+    <div class="tienda-proximamente">
+      <span class="tienda-pez" aria-hidden="true">🐟</span>
+      <p class="tienda-coming-soon">Coming soon</p>
+    </div>
+  </aside>
+
   <script>
+    // Abrir y cerrar la tienda lateral.
+    (function () {
+      var botonAbrir = document.getElementById('abrir-tienda');
+      var botonCerrar = document.getElementById('cerrar-tienda');
+      var panel = document.getElementById('panel-tienda');
+      var fondo = document.getElementById('tienda-fondo');
+
+      function abrirTienda() {
+        panel.classList.add('abierto');
+        panel.setAttribute('aria-hidden', 'false');
+        panel.removeAttribute('inert');
+        botonAbrir.setAttribute('aria-expanded', 'true');
+        fondo.hidden = false;
+        document.body.classList.add('tienda-abierta');
+        botonCerrar.focus();
+      }
+
+      function cerrarTienda() {
+        panel.classList.remove('abierto');
+        panel.setAttribute('aria-hidden', 'true');
+        panel.setAttribute('inert', '');
+        botonAbrir.setAttribute('aria-expanded', 'false');
+        fondo.hidden = true;
+        document.body.classList.remove('tienda-abierta');
+        botonAbrir.focus();
+      }
+
+      botonAbrir.addEventListener('click', abrirTienda);
+      botonCerrar.addEventListener('click', cerrarTienda);
+      fondo.addEventListener('click', cerrarTienda);
+
+      document.addEventListener('keydown', function (evento) {
+        if (evento.key === 'Escape' && panel.classList.contains('abierto')) {
+          cerrarTienda();
+        }
+      });
+    })();
+
+    // Carrusel de fotos.
     (function () {
       var pista = document.querySelector('.carrusel-pista');
       var diapositivas = pista.querySelectorAll('.diapositiva');
@@ -496,17 +468,14 @@
       anterior.addEventListener('click', function () {
         ir(actual() - 1);
       });
-
       siguiente.addEventListener('click', function () {
         ir(actual() + 1);
       });
-
       contenedorPuntos.addEventListener('click', function (e) {
         if (e.target.dataset.indice !== undefined) {
           ir(Number(e.target.dataset.indice));
         }
       });
-
       pista.addEventListener('scroll', marcarPunto);
       marcarPunto();
 
@@ -534,6 +503,7 @@
       }
     })();
 
+    // Cambiar texto e imagen de cada momento de la historia.
     (function () {
       var linea = document.querySelector('.linea-tiempo');
       if (!linea) return;
@@ -554,7 +524,6 @@
           imagen.classList.add('cambiando');
           imagen.src = boton.dataset.imagen;
           imagen.alt = boton.dataset.alt;
-
           imagen.onload = function () {
             imagen.classList.remove('cambiando');
           };
