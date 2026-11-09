@@ -210,7 +210,7 @@
             </li>
           </ul>
 
-          <a href=https://maps.app.goo.gl/krQNjMS5qrcxgVvc8 class="btn" target="_blank" rel="noopener noreferrer">Cómo llegar →</a>
+          <a href="https://maps.app.goo.gl/krQNjMS5qrcxgVvc8" class="btn" target="_blank" rel="noopener noreferrer">Cómo llegar →</a>
         </div>
       </div>
     </section>
@@ -368,7 +368,7 @@
             Lunes a viernes, 8:00 a. m. a 6:00 p. m.
           </p>
           <a class="btn-whatsapp"
-             href="https://wa.me/3161316390?text=Hola%2C%20quiero%20inscribirme%20en%20las%20clases%20de%20nataci%C3%B3n"
+             href="https://wa.me/573161316390?text=Hola%2C%20quiero%20inscribirme%20en%20las%20clases%20de%20nataci%C3%B3n"
              target="_blank" rel="noopener noreferrer">
             Escribir por WhatsApp
           </a>
@@ -379,7 +379,7 @@
           <h3>Síguenos en redes</h3>
           <p>Fotos, resultados, eventos y noticias del club.</p>
           <div class="lista-redes">
-            <a class="red" href="https://www.instagram.com/club_caribes?utm_source=ig_web_button_share_sheet&xtok=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">📸 Instagram</a>
+            <a class="red" href="https://www.instagram.com/club_caribes?utm_source=ig_web_button_share_sheet&amp;xtok=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">📸 Instagram</a>
             <a class="red" href="https://www.facebook.com/share/1cPuk5hRoc/" target="_blank" rel="noopener noreferrer">ⓕ Facebook</a>
           </div>
         </article>
@@ -392,8 +392,8 @@
     <h3>🌊 Caribes Acuáticos | Club de Natación</h3>
     <p>Aprende, disfruta y supera tus límites.</p>
     <p>
-      <a href="https://wa.me/573133775918" target="_blank" rel="noopener noreferrer">WhatsApp</a> ·
-      <a href="https://www.instagram.com/tu_club" target="_blank" rel="noopener noreferrer">Instagram</a> 
+      <a href="https://wa.me/573161316390" target="_blank" rel="noopener noreferrer">WhatsApp</a> ·
+      <a href="https://www.instagram.com/club_caribes?utm_source=ig_web_button_share_sheet&amp;xtok=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">Instagram</a>
     </p>
     <p>© 2026 Caribes Acuáticos. Todos los derechos están reservados.</p>
   </footer>
@@ -421,6 +421,18 @@
       var botonCerrar = document.getElementById('cerrar-tienda');
       var panel = document.getElementById('panel-tienda');
       var fondo = document.getElementById('tienda-fondo');
+      var paginaDeFondo = document.querySelectorAll('body > header, body > section, body > main, body > footer');
+
+      // Mientras la tienda está abierta, el resto de la página no recibe el foco del teclado.
+      function bloquearFondo(bloquear) {
+        paginaDeFondo.forEach(function (zona) {
+          if (bloquear) {
+            zona.setAttribute('inert', '');
+          } else {
+            zona.removeAttribute('inert');
+          }
+        });
+      }
 
       function abrirTienda() {
         panel.classList.add('abierto');
@@ -429,6 +441,7 @@
         botonAbrir.setAttribute('aria-expanded', 'true');
         fondo.hidden = false;
         document.body.classList.add('tienda-abierta');
+        bloquearFondo(true);
         botonCerrar.focus();
       }
 
@@ -439,6 +452,7 @@
         botonAbrir.setAttribute('aria-expanded', 'false');
         fondo.hidden = true;
         document.body.classList.remove('tienda-abierta');
+        bloquearFondo(false);
         botonAbrir.focus();
       }
 
@@ -540,6 +554,9 @@
 
       botones.forEach(function (boton) {
         boton.addEventListener('click', function () {
+          // Si ya está seleccionado, no hay nada que cambiar.
+          if (boton.classList.contains('activo')) return;
+
           botones.forEach(function (otro) {
             var seleccionado = otro === boton;
             otro.classList.toggle('activo', seleccionado);
