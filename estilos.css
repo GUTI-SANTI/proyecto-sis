@@ -412,54 +412,67 @@ section {
 }
 
 /* Equipo de trabajo */
-/* Distribución del equipo Caribes */
-#equipo .equipo-entrenadores {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.equipo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
 }
 
-#equipo .equipo-entrenadores .persona:nth-child(4) {
-  grid-column: 2;
-}
-
-.secretaria-equipo {
-  max-width: 360px;
-  margin: 32px auto 0;
-  padding-top: 24px;
-  border-top: 1px solid var(--borde);
+.persona {
+  background: white;
+  padding: 27px;
+  border-radius: 15px;
+  border: 1px solid var(--borde);
+  border-top: 4px solid var(--azul-claro);
   text-align: center;
 }
 
-.secretaria-equipo > h3 {
-  margin-bottom: 16px;
+.avatar {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: var(--azul-oscuro);
+  border: 4px solid var(--naranja);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  object-fit: cover;
+}
+
+.persona h3 {
   color: var(--azul-oscuro);
+  margin-bottom: 4px;
 }
 
-.secretaria-equipo .persona {
-  border-top-color: var(--naranja);
+.persona .cargo {
+  color: var(--naranja-texto);
+  font-weight: bold;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
 }
 
-/* Ajuste para pantallas pequeñas */
-@media (max-width: 680px) {
-  #equipo .equipo-entrenadores {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  #equipo .equipo-entrenadores .persona:nth-child(4) {
-    grid-column: 1 / -1;
-    width: calc(50% - 11px);
-    justify-self: center;
-  }
+/* Sección de invitación */
+.llamada {
+  background: var(--azul-oscuro);
+  border-top: 6px solid var(--naranja);
+  color: white;
+  padding: 45px 25px;
+  border-radius: 20px;
+  text-align: center;
 }
 
-@media (max-width: 480px) {
-  #equipo .equipo-entrenadores {
-    grid-template-columns: 1fr;
-  }
+.llamada h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
 
-  #equipo .equipo-entrenadores .persona:nth-child(4) {
-    grid-column: auto;
-    width: 100%;
-  }
+.llamada p {
+  max-width: 600px;
+  margin: 0 auto 22px;
 }
 
 /* Galería de imágenes */
@@ -1177,5 +1190,219 @@ body.tienda-abierta {
 
   .tienda-contenido {
     padding: 30px 20px;
+  }
+}
+
+/* Invitación e inscripción en línea */
+.llamada {
+  position: relative;
+  overflow: hidden;
+  padding: 64px 24px;
+  background: linear-gradient(135deg, var(--azul-profundo), var(--azul-oscuro) 60%, #07559b);
+  color: var(--blanco);
+  text-align: center;
+}
+
+.llamada::before,
+.llamada::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.llamada::before {
+  top: -150px;
+  left: -80px;
+}
+
+.llamada::after {
+  right: -90px;
+  bottom: -170px;
+  width: 340px;
+  height: 340px;
+}
+
+.llamada-contenido {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 980px);
+  margin: 0 auto;
+}
+
+.llamada-etiqueta {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #b9e2ff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.llamada h2 {
+  max-width: 760px;
+  margin: 0 auto 8px;
+  color: var(--blanco);
+  font-size: clamp(2rem, 5vw, 3.3rem);
+  line-height: 1.12;
+}
+
+.llamada h3 {
+  margin: 0 0 14px;
+  color: #ffd0b2;
+  font-size: 1.2rem;
+}
+
+.llamada .llamada-intro {
+  max-width: 690px;
+  margin: 0 auto 28px;
+  color: #e8f4ff;
+  font-size: 1.05rem;
+}
+
+.llamada-metas {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0 auto 24px;
+  text-align: left;
+}
+
+.llamada-meta {
+  padding: 22px;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 18px;
+  background: rgba(255,255,255,.09);
+}
+
+.llamada-meta > span {
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 10px;
+  border-radius: 13px;
+  background: var(--blanco);
+  font-size: 1.35rem;
+}
+
+.llamada-meta h4 {
+  margin: 0 0 5px;
+  color: var(--blanco);
+  font-size: 1.12rem;
+}
+
+.llamada-meta p {
+  margin: 0;
+  color: #e1efff;
+  font-size: 0.95rem;
+}
+
+.llamada .llamada-cierre {
+  margin: 0 auto 20px;
+  color: var(--blanco);
+  font-weight: 700;
+}
+
+.llamada .llamada-boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 24px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--naranja);
+  color: var(--blanco);
+  font-weight: 800;
+  box-shadow: 0 8px 22px rgba(0,0,0,.2);
+}
+
+.llamada .llamada-boton:hover,
+.llamada .llamada-boton:focus-visible {
+  background: #ff762e;
+  transform: translateY(-2px);
+}
+
+.llamada .llamada-nota {
+  margin: 10px 0 0;
+  color: #c9e1f7;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 680px) {
+  .llamada {
+    padding: 48px 18px;
+  }
+
+  .llamada-metas {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .llamada-meta {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    column-gap: 12px;
+    padding: 15px;
+  }
+
+  .llamada-meta > span {
+    grid-row: span 2;
+    margin: 0;
+  }
+
+  .llamada-meta h4 {
+    align-self: end;
+  }
+}
+
+/* Distribución del equipo: cuatro entrenadores y secretaría separada */
+#equipo .equipo-entrenadores {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+#equipo .equipo-entrenadores .persona:nth-child(4) {
+  grid-column: 2;
+}
+
+.secretaria-equipo {
+  max-width: 360px;
+  margin: 32px auto 48px;
+  text-align: center;
+}
+
+.secretaria-equipo > h3 {
+  margin-bottom: 16px;
+  color: var(--azul-oscuro);
+}
+
+.secretaria-equipo .persona {
+  border-top-color: var(--naranja);
+}
+
+@media (max-width: 680px) {
+  #equipo .equipo-entrenadores {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #equipo .equipo-entrenadores .persona:nth-child(4) {
+    grid-column: 1 / -1;
+    width: calc(50% - 11px);
+    justify-self: center;
+  }
+}
+
+@media (max-width: 480px) {
+  #equipo .equipo-entrenadores {
+    grid-template-columns: 1fr;
+  }
+
+  #equipo .equipo-entrenadores .persona:nth-child(4) {
+    grid-column: auto;
+    width: 100%;
   }
 }
