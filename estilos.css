@@ -413,6 +413,7 @@ section {
 
 /* Equipo de trabajo */
 /* Distribución del equipo Caribes */
+/* Distribución del equipo Caribes */
 #equipo .equipo-entrenadores {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -423,7 +424,7 @@ section {
 
 .secretaria-equipo {
   max-width: 360px;
- margin: 32px auto 0px;
+  margin: 32px auto 0;
   padding-top: 24px;
   border-top: 1px solid var(--borde);
   text-align: center;
