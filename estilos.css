@@ -413,7 +413,6 @@ section {
 
 /* Equipo de trabajo */
 /* Distribución del equipo Caribes */
-/* Distribución del equipo Caribes */
 #equipo .equipo-entrenadores {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -461,26 +460,6 @@ section {
     grid-column: auto;
     width: 100%;
   }
-}
-
-/* Sección de invitación */
-.llamada {
-  background: var(--azul-oscuro);
-  border-top: 6px solid var(--naranja);
-  color: white;
-  padding: 45px 25px;
-  border-radius: 20px;
-  text-align: center;
-}
-
-.llamada h2 {
-  font-size: 2rem;
-  margin-bottom: 12px;
-}
-
-.llamada p {
-  max-width: 600px;
-  margin: 0 auto 22px;
 }
 
 /* Galería de imágenes */
