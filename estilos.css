@@ -318,7 +318,6 @@ section {
   background-position: center;
 }
 
-/* Imagen centrada */
 .metas img {
   display: block;
   width: 100%;
@@ -329,6 +328,13 @@ section {
   top: 0;
   left: 0;
   border-radius: 20px;
+}
+
+/* Ajuste de imagen para computadores */
+@media (min-width: 769px) {
+  .metas img {
+    object-position: 50% 40%;
+  }
 }
 
 .metas:focus-visible {
