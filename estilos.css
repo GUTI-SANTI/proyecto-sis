@@ -300,6 +300,7 @@ section {
   margin-top: 24px;
 }
 
+
 /* Tarjeta interactiva de metas */
 .metas {
   position: relative;
@@ -312,8 +313,22 @@ section {
   border: 1px solid var(--borde);
   box-shadow: 0 8px 25px #00338015;
   background:
-    url("img/porque1.jpg") center/cover no-repeat,
+    url("img/porque1.jpg") center center / cover no-repeat,
     linear-gradient(135deg, var(--azul-oscuro), var(--azul-claro));
+  background-position: center;
+}
+
+/* Imagen centrada */
+.metas img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
 }
 
 .metas:focus-visible {
@@ -342,6 +357,7 @@ section {
   font-size: 0.85rem;
   font-weight: bold;
   transition: opacity 0.3s;
+  z-index: 2;
 }
 
 .metas-detalle {
@@ -360,6 +376,7 @@ section {
   transform: translateY(24px);
   pointer-events: none;
   transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 3;
 }
 
 .metas-detalle .icono {
@@ -394,6 +411,7 @@ section {
   color: var(--azul-claro);
 }
 
+/* Efecto al pasar el cursor */
 .metas:hover .metas-detalle,
 .metas:focus .metas-detalle,
 .metas:focus-within .metas-detalle {
@@ -410,6 +428,7 @@ section {
 .metas:focus-within .pista-img {
   opacity: 0;
 }
+
 
 /* Equipo de trabajo */
 .equipo {
