@@ -423,7 +423,7 @@ section {
 
 .secretaria-equipo {
   max-width: 360px;
-  margin: 32px auto 0;
+ margin: 32px auto 48px;
   padding-top: 24px;
   border-top: 1px solid var(--borde);
   text-align: center;
