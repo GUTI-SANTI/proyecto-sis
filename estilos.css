@@ -779,6 +779,23 @@ footer a:hover {
   outline: none;
 }
 
+/* Botón para pagar la mensualidad */
+.menu-pago {
+  grid-column: 1;
+  grid-row: 2;
+  justify-self: stretch;
+  border: 2px solid var(--naranja);
+  border-radius: 12px;
+  background: var(--azul-oscuro);
+  color: white;
+}
+
+.menu-pago:hover,
+.menu-pago:focus-visible {
+  background: var(--naranja);
+  color: white;
+}
+
 /* Carrito y tienda */
 .carrito-btn {
   display: flex;
@@ -1132,7 +1149,7 @@ body.tienda-abierta {
   }
 
   .metas-detalle {
-    padding: 20px 20px;
+    padding: 20px;
   }
 
   .metas-detalle .icono {
@@ -1197,8 +1214,10 @@ body.tienda-abierta {
 
   .menu-enlace:nth-child(1),
   .menu-enlace:nth-child(5),
-  .menu-enlace:nth-child(6) {
+  .menu-enlace:nth-child(6),
+  .menu-enlace:nth-child(7) {
     grid-column: auto;
+    grid-row: auto;
   }
 
   .menu-enlace:nth-child(odd) {
