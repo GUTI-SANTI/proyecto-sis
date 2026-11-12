@@ -534,6 +534,10 @@ section {
   display: block;
 }
 
+.diapositiva.bandera img {
+  object-fit: cover;
+}
+
 .diapositiva figcaption {
   position: absolute;
   left: 0;
@@ -705,7 +709,6 @@ footer a:hover {
 .marca {
   display: inline-flex;
   align-items: center;
-  gap: 16px;
   color: white;
   text-decoration: none;
 }
@@ -715,26 +718,15 @@ footer a:hover {
 }
 
 .marca-logo {
-  display: grid;
-  place-items: center;
-  width: 92px;
-  height: 92px;
-  flex: 0 0 92px;
+  display: block;
+  width: 132px;
+  height: 132px;
+  flex: 0 0 132px;
+  padding: 3px;
   border: 3px solid var(--naranja);
   border-radius: 20px;
   background: white;
-  font-size: 3.5rem;
-  line-height: 1;
-}
-
-.marca-texto {
-  display: flex;
-  flex-direction: column;
-  color: white;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.8rem, 3vw, 2.35rem);
-  font-weight: bold;
-  line-height: 1.02;
+  object-fit: contain;
 }
 
 .menu-principal {
@@ -1160,6 +1152,10 @@ body.tienda-abierta {
     aspect-ratio: 4 / 3;
   }
 
+  .diapositiva.bandera {
+    aspect-ratio: 16 / 9;
+  }
+
   .carrusel-btn {
     width: 38px;
     height: 38px;
@@ -1182,7 +1178,7 @@ body.tienda-abierta {
   }
 
   .metas-detalle {
-    padding: 20px 20px;
+    padding: 20px;
   }
 
   .metas-detalle .icono {
@@ -1204,20 +1200,11 @@ body.tienda-abierta {
     gap: 6px;
   }
 
-  .marca {
-    gap: 10px;
-  }
-
   .marca-logo {
-    width: 68px;
-    height: 68px;
-    flex-basis: 68px;
+    width: 86px;
+    height: 86px;
+    flex-basis: 86px;
     border-radius: 15px;
-    font-size: 2.7rem;
-  }
-
-  .marca-texto {
-    font-size: 1.6rem;
   }
 
   .carrito-btn,
@@ -1350,19 +1337,11 @@ body.tienda-abierta {
     height: 36px;
   }
 
-  .marca {
-    gap: 6px;
-  }
-
   .marca-logo {
-    width: 52px;
-    height: 52px;
-    flex-basis: 52px;
-    font-size: 2rem;
-  }
-
-  .marca-texto {
-    font-size: 1.05rem;
+    width: 58px;
+    height: 58px;
+    flex-basis: 58px;
+    border-radius: 12px;
   }
 
   .carrito-etiqueta,
