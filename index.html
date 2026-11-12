@@ -13,11 +13,6 @@
 
   <header class="site-header">
     <div class="encabezado-superior">
-      <a href="#inicio" class="marca" aria-label="Caribes Acuáticos, ir al inicio">
-        <span class="marca-logo" aria-hidden="true">🐟</span>
-        <span class="marca-texto"><span>Caribes</span><span>Acuáticos</span></span>
-      </a>
-
       <button class="carrito-btn" id="abrir-tienda" type="button"
         aria-label="Abrir tienda" aria-controls="panel-tienda" aria-expanded="false">
         <span class="carrito-circulo" aria-hidden="true">
@@ -29,6 +24,17 @@
         </span>
         <span class="carrito-etiqueta">TIENDA DIGITAL</span>
       </button>
+
+      <a href="#inicio" class="marca" aria-label="Caribes Acuáticos, ir al inicio">
+        <span class="marca-logo" aria-hidden="true">🐟</span>
+        <span class="marca-texto"><span>Caribes</span><span>Acuáticos</span></span>
+      </a>
+
+      <a href="img/qr-mensualidad.png" class="pago-btn" target="_blank" rel="noopener noreferrer"
+        aria-label="Pagar mensualidad: abrir código QR en una pestaña nueva">
+        <span class="pago-circulo" aria-hidden="true">💳</span>
+        <span class="pago-etiqueta">PAGAR MENSUALIDAD</span>
+      </a>
     </div>
 
     <nav class="menu-principal" aria-label="Menú principal">
@@ -38,8 +44,6 @@
       <a href="#programas" class="menu-enlace">Programas</a>
       <a href="#equipo" class="menu-enlace">Nuestro equipo</a>
       <a href="#redes" class="menu-enlace menu-inscripcion">Ven e inscríbete</a>
-      <a href="img/qr-mensualidad.png" class="menu-enlace menu-pago"
-        target="_blank" rel="noopener noreferrer">💳 PAGAR MENSUALIDAD</a>
     </nav>
   </header>
 
@@ -473,6 +477,7 @@
       var fondo = document.getElementById('tienda-fondo');
       var paginaDeFondo = document.querySelectorAll('body > header, body > section, body > main, body > footer');
 
+      // Mientras la tienda está abierta, el resto de la página no recibe el foco del teclado.
       function bloquearFondo(bloquear) {
         paginaDeFondo.forEach(function (zona) {
           if (bloquear) {
@@ -603,6 +608,7 @@
 
       botones.forEach(function (boton) {
         boton.addEventListener('click', function () {
+          // Si ya está seleccionado, no hay nada que cambiar.
           if (boton.classList.contains('activo')) return;
 
           botones.forEach(function (otro) {
