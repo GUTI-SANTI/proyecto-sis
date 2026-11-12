@@ -38,6 +38,8 @@
       <a href="#programas" class="menu-enlace">Programas</a>
       <a href="#equipo" class="menu-enlace">Nuestro equipo</a>
       <a href="#redes" class="menu-enlace menu-inscripcion">Ven e inscríbete</a>
+      <a href="img/qr-mensualidad.png" class="menu-enlace menu-pago"
+        target="_blank" rel="noopener noreferrer">💳 Pagar mensualidad</a>
     </nav>
   </header>
 
@@ -164,6 +166,18 @@
             <img src="img/club.jpg" alt="Instalaciones de la piscina del club" loading="lazy">
             <figcaption>Foto del club. Hace falta una foto distinta para esta diapositiva.</figcaption>
           </figure>
+          <figure class="diapositiva">
+            <img src="img/club.jpg" alt="Foto 6 del club; cambia esta imagen por una diferente" loading="lazy">
+            <figcaption>Añade aquí una foto distinta para la diapositiva 6.</figcaption>
+          </figure>
+          <figure class="diapositiva">
+            <img src="img/club.jpg" alt="Foto 7 del club; cambia esta imagen por una diferente" loading="lazy">
+            <figcaption>Añade aquí una foto distinta para la diapositiva 7.</figcaption>
+          </figure>
+          <figure class="diapositiva">
+            <img src="img/club.jpg" alt="Foto 8 del club; cambia esta imagen por una diferente" loading="lazy">
+            <figcaption>Añade aquí una foto distinta para la diapositiva 8.</figcaption>
+          </figure>
         </div>
 
         <button type="button" class="carrusel-btn anterior" aria-label="Foto anterior">‹</button>
@@ -236,17 +250,14 @@
               <strong>Formación deportiva:</strong>
               Desarrolla tus habilidades y crece como deportista.
             </li>
-
             <li>
               <strong>Salud y bienestar:</strong>
               Disfruta de la natación y aprovecha tu tiempo libre.
             </li>
-
             <li>
               <strong>Formación en valores:</strong>
               Fortalece la disciplina, honestidad y responsabilidad.
             </li>
-
             <li>
               <strong>Espíritu competitivo:</strong>
               Participa en eventos deportivos y representa al club.
@@ -259,7 +270,8 @@
     <!-- 6. PROGRAMAS -->
     <section id="programas">
       <h2 class="titulo">Encuentra tu programa ideal</h2>
-      <p class="descripcion">En Caribes contamos con programas de natación diseñados para diferentes edades, niveles y objetivos.
+      <p class="descripcion">
+        En Caribes contamos con programas de natación diseñados para diferentes edades, niveles y objetivos.
         Desde quienes desean aprender a nadar por primera vez hasta deportistas que buscan perfeccionar su técnica y alcanzar nuevas metas.
       </p>
       <h3>¡Descubre el programa ideal para ti y comienza tu experiencia con nosotros!</h3>
@@ -344,21 +356,21 @@
 
         <article class="persona">
           <div class="avatar">WT</div>
-          <h3>Nombre </h3>
-          <p class="cargo">Entrenador de natación </p>
+          <h3>Nombre</h3>
+          <p class="cargo">Entrenador de natación</p>
           <p>Breve descripción de su experiencia y formación.</p>
         </article>
 
         <article class="persona">
           <div class="avatar">JH</div>
-          <h3>Nombre </h3>
+          <h3>Nombre</h3>
           <p class="cargo">Entrenador deportivo</p>
           <p>Breve descripción de su experiencia y formación.</p>
         </article>
 
         <article class="persona">
           <div class="avatar">MN</div>
-          <h3>Nombre </h3>
+          <h3>Nombre</h3>
           <p class="cargo">Entrenador de natación</p>
           <p>Breve descripción de su experiencia y formación.</p>
         </article>
@@ -391,7 +403,8 @@
     <!-- 9. REDES Y CONTACTO -->
     <section id="redes">
       <h2 class="titulo">Inscríbete y síguenos</h2>
-      <p class="descripcion">¿Quieres formar parte de Caribes? ¡Nos encantaría conocerte!
+      <p class="descripcion">
+        ¿Quieres formar parte de Caribes? ¡Nos encantaría conocerte!
         Si estás interesado en aprender a nadar, entrenar o conocer nuestros programas.
       </p>
 
@@ -460,7 +473,6 @@
       var fondo = document.getElementById('tienda-fondo');
       var paginaDeFondo = document.querySelectorAll('body > header, body > section, body > main, body > footer');
 
-      // Mientras la tienda está abierta, el resto de la página no recibe el foco del teclado.
       function bloquearFondo(bloquear) {
         paginaDeFondo.forEach(function (zona) {
           if (bloquear) {
@@ -591,7 +603,6 @@
 
       botones.forEach(function (boton) {
         boton.addEventListener('click', function () {
-          // Si ya está seleccionado, no hay nada que cambiar.
           if (boton.classList.contains('activo')) return;
 
           botones.forEach(function (otro) {
