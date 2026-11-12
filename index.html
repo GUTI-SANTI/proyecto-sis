@@ -26,8 +26,7 @@
       </button>
 
       <a href="#inicio" class="marca" aria-label="Caribes Acuáticos, ir al inicio">
-        <span class="marca-logo" aria-hidden="true">🐟</span>
-        <span class="marca-texto"><span>Caribes</span><span>Acuáticos</span></span>
+        <img class="marca-logo" src="img/cari.jpg" alt="">
       </a>
 
       <a href="img/qr-mensualidad.png" class="pago-btn" target="_blank" rel="noopener noreferrer"
@@ -150,12 +149,13 @@
 
       <div class="carrusel" role="region" aria-roledescription="carrusel" aria-label="Fotos del club">
         <div class="carrusel-pista">
-          <figure class="diapositiva">
-            <img src="img/img.jpeg" alt="Niños en clase de natación">
-            <figcaption>Niños en clase de natación.</figcaption>
+          <figure class="diapositiva bandera">
+            <img src="img/BANDERA.CLUB-carrusel.jpg"
+              alt="Integrantes de Caribes Acuáticos sosteniendo la bandera del club">
+            <figcaption>Equipo del club con su bandera oficial.</figcaption>
           </figure>
           <figure class="diapositiva">
-            <img src="img/PODIO.jpg" alt="Podio Nacional FECNA" loading="lazy">
+            <img src="img/PODIO.jpg" alt="Nadadores en el podio nacional FECNA" loading="lazy">
             <figcaption>Podio Nacional FECNA.</figcaption>
           </figure>
           <figure class="diapositiva">
@@ -163,8 +163,8 @@
             <figcaption>Grupo de menores en competencias.</figcaption>
           </figure>
           <figure class="diapositiva">
-            <img src="img/BANDERA.CLUB-carrusel.jpg" alt="Foto de la bandera oficial" loading="lazy">
-            <figcaption>Foto de la bandera oficial.</figcaption>
+            <img src="img/club.jpg" alt="Adultos en clase de natación" loading="lazy">
+            <figcaption>Foto del club. Hace falta una foto distinta para esta diapositiva.</figcaption>
           </figure>
           <figure class="diapositiva">
             <img src="img/club.jpg" alt="Instalaciones de la piscina del club" loading="lazy">
@@ -477,7 +477,6 @@
       var fondo = document.getElementById('tienda-fondo');
       var paginaDeFondo = document.querySelectorAll('body > header, body > section, body > main, body > footer');
 
-      // Mientras la tienda está abierta, el resto de la página no recibe el foco del teclado.
       function bloquearFondo(bloquear) {
         paginaDeFondo.forEach(function (zona) {
           if (bloquear) {
@@ -608,7 +607,6 @@
 
       botones.forEach(function (boton) {
         boton.addEventListener('click', function () {
-          // Si ya está seleccionado, no hay nada que cambiar.
           if (boton.classList.contains('activo')) return;
 
           botones.forEach(function (otro) {
