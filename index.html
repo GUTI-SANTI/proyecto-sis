@@ -349,6 +349,7 @@
     <!-- 7. NUESTRO EQUIPO -->
     <section id="equipo">
       <h2 class="titulo">Nuestro equipo</h2>
+
       <p class="descripcion">
         Conoce a las personas que hacen parte de Caribes y trabajan por el desarrollo deportivo de nuestros nadadores.
       </p>
@@ -425,8 +426,8 @@
             Atención por WhatsApp: lunes a viernes, de 8:00 a. m. a 6:00 p. m.
           </p>
           <a class="btn-whatsapp"
-            href="https://wa.me/573161316390?text=Hola%2C%20quiero%20inscribirme%20en%20las%20clases%20de%20nataci%C3%B3n"
-            target="_blank" rel="noopener noreferrer">
+             href="https://wa.me/573161316390?text=Hola%2C%20quiero%20inscribirme%20en%20las%20clases%20de%20nataci%C3%B3n"
+             target="_blank" rel="noopener noreferrer">
             Contáctanos
           </a>
         </article>
@@ -480,6 +481,7 @@
       var fondo = document.getElementById('tienda-fondo');
       var paginaDeFondo = document.querySelectorAll('body > header, body > section, body > main, body > footer');
 
+      // Mientras la tienda está abierta, el resto de la página no recibe el foco del teclado.
       function bloquearFondo(bloquear) {
         paginaDeFondo.forEach(function (zona) {
           if (bloquear) {
