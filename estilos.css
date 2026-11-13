@@ -465,6 +465,34 @@ section {
   margin-bottom: 8px;
 }
 
+.persona .estado-acreditacion {
+  display: inline-block;
+  margin: 4px 0 16px;
+  padding: 5px 12px;
+  border: 1px solid #b7e4c7;
+  border-radius: 20px;
+  background: #e9f8ee;
+  color: #18753a;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.datos-certificacion {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.datos-certificacion li {
+  margin-top: 9px;
+  line-height: 1.5;
+}
+
+.datos-certificacion strong {
+  color: var(--azul-oscuro);
+}
+
 .llamada {
   background: var(--azul-oscuro);
   border-top: 6px solid var(--naranja);
