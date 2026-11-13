@@ -50,7 +50,6 @@
     </nav>
   </header>
 
-  <!-- 1. PORTADA -->
   <section class="hero" id="inicio">
     <div class="hero-content">
       <span class="etiqueta">CLUB DE NATACIÓN</span>
@@ -65,15 +64,11 @@
   </section>
 
   <main>
-
-    <!-- 2. QUIÉNES SOMOS -->
     <section id="quienes-somos">
       <h2 class="titulo">Quiénes somos</h2>
       <p class="descripcion">Somos Caribes Acuáticos</p>
 
       <div class="porque-bloques">
-
-        <!-- HISTORIA DEL CLUB -->
         <div class="porque invertido">
           <div class="porque-imagen">
             <img class="historia-imagen" src="img/nosotros1.jpg"
@@ -117,7 +112,6 @@
           </div>
         </div>
 
-        <!-- MISIÓN -->
         <div class="porque">
           <div class="porque-imagen">
             <img src="img/nosotros2.jpg" alt="Misión del club Caribes Acuáticos" loading="lazy">
@@ -129,7 +123,6 @@
           </div>
         </div>
 
-        <!-- VISIÓN -->
         <div class="porque invertido">
           <div class="porque-imagen">
             <img src="img/nosotros3.jpg" alt="Visión del club Caribes Acuáticos" loading="lazy">
@@ -140,11 +133,9 @@
             <p>Esta es la visión del club. Aquí puedes escribir cómo quieres que Caribes Acuáticos crezca y sea reconocido en el futuro.</p>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- 3. GALERÍA -->
     <section id="galeria">
       <h2 class="titulo">Conoce nuestro club</h2>
       <p class="descripcion">
@@ -194,7 +185,6 @@
       <div class="puntos" id="puntos"></div>
     </section>
 
-    <!-- 4. UBICACIÓN -->
     <section id="ubicacion">
       <h2 class="titulo">¿Dónde estamos ubicados?</h2>
       <p class="descripcion">
@@ -236,7 +226,6 @@
       </div>
     </section>
 
-    <!-- 5. BENEFICIOS -->
     <section id="beneficios">
       <h2 class="titulo">¿Por qué elegir a Caribes?</h2>
       <p class="descripcion">
@@ -253,28 +242,15 @@
           <h3 class="porque-titulo">Más que natación, formación para la vida.</h3>
           <p>En Caribes promovemos el deporte como una oportunidad para crecer, cuidar la salud y desarrollar grandes valores.</p>
           <ul>
-            <li>
-              <strong>Formación deportiva:</strong>
-              Desarrolla tus habilidades y crece como deportista.
-            </li>
-            <li>
-              <strong>Salud y bienestar:</strong>
-              Disfruta de la natación y aprovecha tu tiempo libre.
-            </li>
-            <li>
-              <strong>Formación en valores:</strong>
-              Fortalece la disciplina, honestidad y responsabilidad.
-            </li>
-            <li>
-              <strong>Espíritu competitivo:</strong>
-              Participa en eventos deportivos y representa al club.
-            </li>
+            <li><strong>Formación deportiva:</strong> Desarrolla tus habilidades y crece como deportista.</li>
+            <li><strong>Salud y bienestar:</strong> Disfruta de la natación y aprovecha tu tiempo libre.</li>
+            <li><strong>Formación en valores:</strong> Fortalece la disciplina, honestidad y responsabilidad.</li>
+            <li><strong>Espíritu competitivo:</strong> Participa en eventos deportivos y representa al club.</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- 6. PROGRAMAS -->
     <section id="programas">
       <h2 class="titulo">Encuentra tu programa ideal</h2>
       <p class="descripcion">
@@ -346,10 +322,8 @@
       </div>
     </section>
 
-    <!-- 7. NUESTRO EQUIPO -->
     <section id="equipo">
       <h2 class="titulo">Nuestro equipo</h2>
-
       <p class="descripcion">
         Conoce a las personas que hacen parte de Caribes y trabajan por el desarrollo deportivo de nuestros nadadores.
       </p>
@@ -395,7 +369,6 @@
       </div>
     </section>
 
-    <!-- 8. INVITACIÓN -->
     <section class="llamada">
       <h2>¡Comienza hoy tu camino con Caribes!</h2>
       <p>
@@ -408,7 +381,6 @@
       </a>
     </section>
 
-    <!-- 9. REDES Y CONTACTO -->
     <section id="redes">
       <h2 class="titulo">Inscríbete y síguenos</h2>
       <p class="descripcion">
@@ -443,7 +415,6 @@
         </article>
       </div>
     </section>
-
   </main>
 
   <footer>
@@ -456,7 +427,6 @@
     <p>© 2026 Caribes Acuáticos. Todos los derechos están reservados.</p>
   </footer>
 
-  <!-- Panel lateral de la tienda -->
   <div class="tienda-fondo" id="tienda-fondo" hidden></div>
 
   <aside class="tienda-panel" id="panel-tienda"
@@ -473,7 +443,6 @@
   </aside>
 
   <script>
-    // Abrir y cerrar la tienda lateral.
     (function () {
       var botonAbrir = document.getElementById('abrir-tienda');
       var botonCerrar = document.getElementById('cerrar-tienda');
@@ -481,7 +450,6 @@
       var fondo = document.getElementById('tienda-fondo');
       var paginaDeFondo = document.querySelectorAll('body > header, body > section, body > main, body > footer');
 
-      // Mientras la tienda está abierta, el resto de la página no recibe el foco del teclado.
       function bloquearFondo(bloquear) {
         paginaDeFondo.forEach(function (zona) {
           if (bloquear) {
@@ -525,7 +493,6 @@
       });
     })();
 
-    // Carrusel de fotos.
     (function () {
       var pista = document.querySelector('.carrusel-pista');
       var diapositivas = pista.querySelectorAll('.diapositiva');
@@ -600,7 +567,6 @@
       }
     })();
 
-    // Cambiar el texto y la imagen de cada momento de la historia.
     (function () {
       var linea = document.querySelector('.linea-tiempo');
       if (!linea) return;
@@ -638,6 +604,5 @@
       });
     })();
   </script>
-
 </body>
 </html>
