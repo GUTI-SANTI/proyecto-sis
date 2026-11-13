@@ -799,6 +799,14 @@ footer a:hover {
   border-left: 0;
 }
 
+.menu-enlace:nth-child(5) {
+  grid-column: 2;
+}
+
+.menu-enlace:nth-child(6) {
+  grid-column: 3;
+}
+
 .menu-enlace:hover,
 .menu-enlace:focus-visible {
   color: white;
@@ -1279,7 +1287,8 @@ body.tienda-abierta {
 
   .menu-enlace:nth-child(1),
   .menu-enlace:nth-child(5),
-  .menu-enlace:nth-child(6) {
+  .menu-enlace:nth-child(6),
+  .menu-enlace:nth-child(7) {
     grid-column: auto;
     grid-row: auto;
   }
