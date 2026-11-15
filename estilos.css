@@ -1388,3 +1388,17 @@ body.tienda-abierta {
     font-size: 0.48rem;
   }
 }
+
+/* Imagen vertical de la sección Visión */
+.vision-tarjeta .porque-imagen {
+  flex: 0 0 42%;
+  min-height: 0;
+  background: white;
+}
+
+.vision-tarjeta .porque-imagen img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
