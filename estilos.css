@@ -422,193 +422,77 @@ section {
   opacity: 0;
 }
 
-#equipo .equipo-carrusel {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.equipo-carrusel-ventana {
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-  border-radius: 20px;
-}
-
-.equipo-carrusel-ventana::-webkit-scrollbar {
-  display: none;
-}
-
-.equipo-carrusel-pista {
-  display: flex;
-}
-
-.equipo-carrusel-pista .equipo-slide {
+.equipo {
   display: grid;
-  grid-template-columns: minmax(240px, 0.85fr) minmax(0, 1.15fr);
-  flex: 0 0 100%;
-  min-width: 0;
-  min-height: 360px;
-  padding: 0;
-  overflow: hidden;
-  border-radius: 20px;
-  scroll-snap-align: start;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
 }
 
-.equipo-slide-foto {
-  min-width: 0;
-  min-height: 360px;
-  overflow: hidden;
+.persona {
+  background: white;
+  padding: 27px;
+  border-radius: 15px;
+  border: 1px solid var(--borde);
+  border-top: 4px solid var(--azul-claro);
+  text-align: center;
+}
+
+.avatar {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
   background: var(--azul-oscuro);
-}
-
-.equipo-retrato {
-  display: block;
-  width: 100%;
-  height: 100%;
-  min-height: 360px;
-  object-fit: cover;
-  object-position: center 30%;
-}
-
-.equipo-slide-info {
+  border: 4px solid var(--naranja);
+  color: white;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: flex-start;
-  padding: 36px clamp(24px, 5vw, 56px);
+  font-size: 2rem;
+  font-weight: bold;
+  object-fit: cover;
 }
 
-.equipo-rol {
-  display: inline-block;
-  margin-bottom: 12px;
-  padding: 6px 12px;
-  border-radius: 20px;
-  background: #fff0e8;
+.persona h3 {
+  color: var(--azul-oscuro);
+  margin-bottom: 4px;
+}
+
+.persona .cargo {
   color: var(--naranja-texto);
+  font-weight: bold;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.persona .estado-acreditacion {
+  display: inline-block;
+  margin: 4px 0 16px;
+  padding: 5px 12px;
+  border: 1px solid #b7e4c7;
+  border-radius: 20px;
+  background: #e9f8ee;
+  color: #18753a;
   font-size: 0.85rem;
   font-weight: bold;
 }
 
-.equipo-rol.acreditacion {
-  border: 1px solid #b7e4c7;
-  background: #e9f8ee;
-  color: #18753a;
-}
-
-.equipo-slide-info h3 {
-  color: var(--azul-oscuro);
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  line-height: 1.2;
-}
-
-.equipo-linea {
-  display: block;
-  width: 56px;
-  height: 4px;
-  margin: 16px 0;
-  border-radius: 4px;
-  background: var(--naranja);
-}
-
-.equipo-slide-info .datos-certificacion {
+.datos-certificacion {
+  margin: 0;
+  padding: 0;
+  list-style: none;
   text-align: left;
 }
 
-.secretaria-descripcion {
-  font-size: 1.05rem;
+.datos-certificacion li {
+  margin-top: 9px;
+  line-height: 1.5;
 }
 
-.equipo-carrusel-controles {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  margin-top: 18px;
-}
-
-.equipo-carrusel-btn {
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border: 2px solid var(--naranja);
-  border-radius: 50%;
-  background: var(--azul-oscuro);
-  color: white;
-  font-size: 1.7rem;
-  line-height: 1;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.equipo-carrusel-btn:hover {
-  background: var(--azul-profundo);
-  transform: scale(1.05);
-}
-
-.equipo-carrusel-posicion {
-  min-width: 48px;
+.datos-certificacion strong {
   color: var(--azul-oscuro);
-  font-weight: bold;
-  text-align: center;
 }
 
-.equipo-carrusel-puntos {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-  margin-top: 12px;
-}
-
-.equipo-carrusel-punto {
-  width: 12px;
-  height: 12px;
-  padding: 0;
-  border: 0;
-  border-radius: 50%;
-  background: #bddcf5;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.equipo-carrusel-punto.activo {
-  background: var(--naranja);
-  transform: scale(1.25);
-}
-
-.solo-lector {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-@media (max-width: 650px) {
-  #equipo .equipo-carrusel {
-    max-width: 380px;
-  }
-
-  .equipo-carrusel-pista .equipo-slide {
-    grid-template-columns: 1fr;
-  }
-
-  .equipo-slide-foto {
-    min-height: 250px;
-    max-height: 280px;
-  }
-
-  .equipo-retrato {
-    min-height: 250px;
-    max-height: 280px;
-  }
-}
 .llamada {
   background: var(--azul-oscuro);
   border-top: 6px solid var(--naranja);
@@ -1380,8 +1264,9 @@ body.tienda-abierta {
   text-align: center;
 }
 
+/* Carrusel del equipo */
 #equipo .equipo-carrusel {
-  max-width: 1050px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -1390,7 +1275,7 @@ body.tienda-abierta {
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
-  border-radius: 16px;
+  border-radius: 20px;
 }
 
 .equipo-carrusel-ventana::-webkit-scrollbar {
@@ -1399,27 +1284,82 @@ body.tienda-abierta {
 
 .equipo-carrusel-pista {
   display: flex;
-  gap: 22px;
-  align-items: stretch;
 }
 
 .equipo-carrusel-pista .equipo-slide {
-  flex: 0 0 calc((100% - 44px) / 3);
+  display: grid;
+  grid-template-columns: minmax(240px, 0.85fr) minmax(0, 1.15fr);
+  flex: 0 0 100%;
   min-width: 0;
-  min-height: 330px;
+  min-height: 360px;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 20px;
   scroll-snap-align: start;
 }
 
-.equipo-slide .datos-certificacion {
-  text-align: center;
+.equipo-slide-foto {
+  min-width: 0;
+  min-height: 360px;
+  overflow: hidden;
+  background: var(--azul-oscuro);
+}
+
+.equipo-retrato {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.equipo-slide-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 36px clamp(24px, 5vw, 56px);
+}
+
+.equipo-rol {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: #fff0e8;
+  color: var(--naranja-texto);
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.equipo-rol.acreditacion {
+  border: 1px solid #b7e4c7;
+  background: #e9f8ee;
+  color: #18753a;
+}
+
+.equipo-slide-info h3 {
+  color: var(--azul-oscuro);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.2;
+}
+
+.equipo-linea {
+  display: block;
+  width: 56px;
+  height: 4px;
+  margin: 16px 0;
+  border-radius: 4px;
+  background: var(--naranja);
+}
+
+.equipo-slide-info .datos-certificacion {
+  text-align: left;
 }
 
 .secretaria-descripcion {
-  margin-top: 10px;
-}
-
-.persona-secretaria {
-  border-top-color: var(--naranja);
+  font-size: 1.05rem;
 }
 
 .equipo-carrusel-controles {
@@ -1427,7 +1367,7 @@ body.tienda-abierta {
   align-items: center;
   justify-content: center;
   gap: 18px;
-  margin-top: 20px;
+  margin-top: 18px;
 }
 
 .equipo-carrusel-btn {
@@ -1450,11 +1390,19 @@ body.tienda-abierta {
   transform: scale(1.05);
 }
 
+.equipo-carrusel-posicion {
+  min-width: 48px;
+  color: var(--azul-oscuro);
+  font-weight: bold;
+  text-align: center;
+}
+
 .equipo-carrusel-puntos {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 9px;
+  margin-top: 12px;
 }
 
 .equipo-carrusel-punto {
@@ -1485,12 +1433,6 @@ body.tienda-abierta {
   border: 0;
 }
 
-@media (max-width: 900px) {
-  .equipo-carrusel-pista .equipo-slide {
-    flex-basis: calc((100% - 22px) / 2);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -1503,313 +1445,4 @@ body.tienda-abierta {
   .btn,
   .tarjeta,
   .btn-whatsapp,
-  .red,
-  .carrusel-btn,
-  .punto,
-  .menu-enlace,
-  .carrito-btn,
-  .tienda-cerrar,
-  .momento-tiempo::before,
-  .historia-imagen,
-  .equipo-carrusel-ventana,
-  .equipo-carrusel-btn,
-  .equipo-carrusel-punto,
-  .extra,
-  .metas-detalle,
-  .metas-icono,
-  .pista-img,
-  .tienda-panel {
-    transition: none;
-  }
-}
-
-@media (max-width: 650px) {
-  .equipo-carrusel {
-    max-width: 380px;
-  }
-
-  .equipo-carrusel-pista .equipo-slide {
-    flex-basis: 100%;
-  }
-
-  .hero {
-    min-height: 430px;
-    padding: 55px 7%;
-    background-position: center;
-  }
-
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-
-  main {
-    padding: 40px 18px;
-  }
-
-  .titulo {
-    font-size: 1.7rem;
-  }
-
-  .llamada h2 {
-    font-size: 1.65rem;
-  }
-
-  .diapositiva {
-    aspect-ratio: 4 / 3;
-  }
-
-  .diapositiva.bandera {
-    aspect-ratio: 16 / 9;
-  }
-
-  .carrusel-btn {
-    width: 38px;
-    height: 38px;
-    font-size: 1.3rem;
-  }
-
-  .porque,
-  .porque.invertido {
-    flex-direction: column;
-  }
-
-  .porque-imagen {
-    flex: none;
-    min-height: 0;
-    aspect-ratio: 4 / 3;
-  }
-
-  .porque-info {
-    padding: 28px 22px;
-  }
-
-  .metas-detalle {
-    padding: 20px;
-  }
-
-  .metas-detalle .icono {
-    display: none;
-  }
-
-  .metas-detalle li {
-    font-size: 0.88rem;
-    margin-bottom: 6px;
-  }
-
-  .site-header {
-    padding: 14px 12px;
-  }
-
-  .encabezado-superior {
-    grid-template-columns: 72px minmax(0, auto) 72px;
-    min-height: 82px;
-    padding: 0 4px 12px;
-    gap: 6px;
-  }
-
-  .marca {
-    gap: 10px;
-    max-width: 100%;
-  }
-
-  .marca-texto {
-    font-size: clamp(1rem, 4vw, 1.65rem);
-  }
-
-  .marca-logo {
-    width: 86px;
-    height: 86px;
-    flex-basis: 86px;
-    border-radius: 15px;
-  }
-
-  .carrito-btn,
-  .pago-btn {
-    width: 72px;
-    min-height: 80px;
-    flex-basis: 72px;
-    padding: 5px;
-    border-radius: 13px;
-  }
-
-  .carrito-circulo,
-  .pago-circulo {
-    width: 42px;
-    height: 42px;
-  }
-
-  .carrito-etiqueta {
-    font-size: 0.7rem;
-  }
-
-  .pago-etiqueta {
-    font-size: 0.57rem;
-  }
-
-  .menu-principal {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: minmax(48px, auto);
-  }
-
-  .menu-enlace {
-    padding: 8px 6px;
-    font-size: 0.84rem;
-    border-top: 1px solid rgba(91, 172, 235, 0.2);
-  }
-
-  .menu-enlace:nth-child(1),
-  .menu-enlace:nth-child(5),
-  .menu-enlace:nth-child(6),
-  .menu-enlace:nth-child(7) {
-    grid-column: auto;
-    grid-row: auto;
-  }
-
-  .menu-enlace:nth-child(odd) {
-    border-left: 0;
-  }
-
-  .tienda-panel {
-    width: 88vw;
-    min-width: 0;
-    padding: 24px 18px;
-  }
-
-  .tienda-contenido {
-    padding: 30px 20px;
-  }
-}
-
-@media (max-width: 400px) {
-  .site-header {
-    padding-right: 10px;
-    padding-left: 10px;
-  }
-
-  .encabezado-superior {
-    grid-template-columns: 58px minmax(0, auto) 58px;
-    gap: 4px;
-    padding-right: 0;
-    padding-left: 0;
-  }
-
-  .carrito-btn,
-  .pago-btn {
-    width: 58px;
-    flex-basis: 58px;
-    min-height: 70px;
-  }
-
-  .carrito-circulo,
-  .pago-circulo {
-    width: 36px;
-    height: 36px;
-  }
-
-  .marca {
-    gap: 6px;
-  }
-
-  .marca-texto {
-    font-size: 0.88rem;
-  }
-
-  .marca-logo {
-    width: 58px;
-    height: 58px;
-    flex-basis: 58px;
-    border-radius: 12px;
-  }
-
-  .carrito-etiqueta,
-  .pago-etiqueta {
-    font-size: 0.48rem;
-  }
-}
-
-/* Organiza Historia, Misión y Visión en tarjetas verticales */
-#quienes-somos .porque-bloques {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 26px;
-  width: 100%;
-}
-
-#quienes-somos .porque-bloques > .porque {
-  width: 100%;
-  min-width: 0;
-}
-
-/* La fotografía de Visión conserva sus proporciones, sin recorte ni estiramiento */
-#quienes-somos .vision-tarjeta .porque-imagen {
-  display: flex;
-  flex: 0 0 42%;
-  align-items: center;
-  justify-content: center;
-  min-height: 0;
-  aspect-ratio: auto;
-  background: white;
-}
-
-#quienes-somos .vision-tarjeta .porque-imagen img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 560px;
-  object-fit: contain;
-}
-
-@media (max-width: 800px) {
-  .pie-contenido {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 34px 28px;
-  }
-}
-
-@media (max-width: 650px) {
-  #quienes-somos .porque-bloques > .porque,
-  #quienes-somos .porque-bloques > .porque.invertido {
-    flex-direction: column;
-  }
-
-  #quienes-somos .vision-tarjeta .porque-imagen {
-    flex: none;
-    width: 100%;
-    aspect-ratio: auto;
-  }
-
-  #quienes-somos .vision-tarjeta .porque-imagen img {
-    width: 100%;
-    height: auto;
-    max-height: none;
-  }
-
-  .pie-contenido {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 30px;
-    padding: 42px 24px 36px;
-  }
-
-  .pie-lema {
-    margin-top: 14px;
-  }
-
-  .pie-final {
-    padding-right: 24px;
-    padding-left: 24px;
-  }
-}
-
-/* Imagen vertical de la sección Visión */
-.vision-tarjeta .porque-imagen {
-  flex: 0 0 42%;
-  min-height: 0;
-  background: white;
-}
-
-.vision-tarjeta .porque-imagen img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
+  .
