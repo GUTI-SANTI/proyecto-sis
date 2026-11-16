@@ -680,24 +680,165 @@ section {
 
 footer {
   background: var(--azul-profundo);
-  border-top: 6px solid var(--naranja);
+  border-top: 7px solid var(--naranja);
   color: white;
-  text-align: center;
-  padding: 30px 20px;
 }
 
-footer p {
-  margin-top: 5px;
+.pie-contenido {
+  display: grid;
+  grid-template-columns: minmax(270px, 1.35fr) minmax(170px, 0.85fr) minmax(230px, 1fr) minmax(150px, 0.75fr);
+  gap: 38px;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 58px 28px 48px;
 }
 
-footer a {
-  color: var(--azul-claro);
-  font-weight: bold;
+.pie-identidad {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: fit-content;
+  color: white;
   text-decoration: none;
 }
 
-footer a:hover {
-  text-decoration: underline;
+.pie-logo {
+  display: block;
+  width: 76px;
+  height: 76px;
+  flex: 0 0 76px;
+  padding: 3px;
+  border: 2px solid var(--naranja);
+  border-radius: 17px;
+  background: white;
+  object-fit: contain;
+}
+
+.pie-titulo {
+  color: white;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.6rem, 2.2vw, 2.15rem);
+  font-weight: 700;
+  line-height: 1.02;
+  text-transform: uppercase;
+}
+
+.pie-lema {
+  max-width: 290px;
+  margin-top: 22px;
+  color: #c9dff5;
+  font-size: 1.05rem;
+}
+
+.pie-columna h2 {
+  margin-bottom: 18px;
+  color: #ff8b4d;
+  font-size: 1.35rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.pie-enlaces {
+  display: grid;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pie-enlaces a,
+.pie-contacto a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.pie-enlaces a::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 0 11px 2px 0;
+  border-radius: 50%;
+  background: var(--naranja);
+}
+
+.pie-enlaces a:hover,
+.pie-contacto a:hover {
+  color: #ffad7e;
+}
+
+.pie-contacto p,
+.pie-contacto a {
+  display: block;
+  margin: 0 0 12px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.pie-contacto p + p {
+  color: #c9dff5;
+}
+
+.pie-redes {
+  display: flex;
+  gap: 12px;
+}
+
+.pie-red {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: white;
+  color: var(--azul-oscuro);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.pie-red:hover {
+  transform: translateY(-3px);
+  background: #ffad7e;
+}
+
+.pie-red svg {
+  width: 23px;
+  height: 23px;
+  fill: currentColor;
+}
+
+.pie-red:nth-child(2) svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+
+.pie-red:nth-child(2) .pie-punto-camara {
+  fill: currentColor;
+  stroke: none;
+}
+
+.pie-redes-texto {
+  max-width: 200px;
+  margin-top: 18px;
+  color: #c9dff5;
+  font-size: 0.95rem;
+}
+
+.pie-final {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 16px 20px;
+  color: #c9dff5;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.pie-final p {
+  margin: 0;
+}
+
+footer a {
+  font-weight: bold;
 }
 
 /* Encabezado */
@@ -1389,7 +1530,7 @@ body.tienda-abierta {
   }
 }
 
-/* Corrección del orden y ancho de Historia, Misión y Visión */
+/* Organiza Historia, Misión y Visión en tarjetas verticales */
 #quienes-somos .porque-bloques {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -1402,7 +1543,7 @@ body.tienda-abierta {
   min-width: 0;
 }
 
-/* La foto de Visión conserva su proporción, sin recorte ni estiramiento */
+/* La fotografía de Visión conserva sus proporciones, sin recorte ni estiramiento */
 #quienes-somos .vision-tarjeta .porque-imagen {
   display: flex;
   flex: 0 0 42%;
@@ -1419,6 +1560,13 @@ body.tienda-abierta {
   height: auto;
   max-height: 560px;
   object-fit: contain;
+}
+
+@media (max-width: 800px) {
+  .pie-contenido {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 34px 28px;
+  }
 }
 
 @media (max-width: 650px) {
@@ -1438,4 +1586,33 @@ body.tienda-abierta {
     height: auto;
     max-height: none;
   }
+
+  .pie-contenido {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+    padding: 42px 24px 36px;
+  }
+
+  .pie-lema {
+    margin-top: 14px;
+  }
+
+  .pie-final {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+}
+
+/* Imagen vertical de la sección Visión */
+.vision-tarjeta .porque-imagen {
+  flex: 0 0 42%;
+  min-height: 0;
+  background: white;
+}
+
+.vision-tarjeta .porque-imagen img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
