@@ -1389,16 +1389,53 @@ body.tienda-abierta {
   }
 }
 
-/* Imagen vertical de la sección Visión */
-.vision-tarjeta .porque-imagen {
+/* Corrección del orden y ancho de Historia, Misión y Visión */
+#quienes-somos .porque-bloques {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 26px;
+  width: 100%;
+}
+
+#quienes-somos .porque-bloques > .porque {
+  width: 100%;
+  min-width: 0;
+}
+
+/* La foto de Visión conserva su proporción, sin recorte ni estiramiento */
+#quienes-somos .vision-tarjeta .porque-imagen {
+  display: flex;
   flex: 0 0 42%;
+  align-items: center;
+  justify-content: center;
   min-height: 0;
+  aspect-ratio: auto;
   background: white;
 }
 
-.vision-tarjeta .porque-imagen img {
+#quienes-somos .vision-tarjeta .porque-imagen img {
   display: block;
   width: 100%;
   height: auto;
+  max-height: 560px;
   object-fit: contain;
+}
+
+@media (max-width: 650px) {
+  #quienes-somos .porque-bloques > .porque,
+  #quienes-somos .porque-bloques > .porque.invertido {
+    flex-direction: column;
+  }
+
+  #quienes-somos .vision-tarjeta .porque-imagen {
+    flex: none;
+    width: 100%;
+    aspect-ratio: auto;
+  }
+
+  #quienes-somos .vision-tarjeta .porque-imagen img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
 }
