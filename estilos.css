@@ -422,77 +422,193 @@ section {
   opacity: 0;
 }
 
-.equipo {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 22px;
+#equipo .equipo-carrusel {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.persona {
-  background: white;
-  padding: 27px;
-  border-radius: 15px;
-  border: 1px solid var(--borde);
-  border-top: 4px solid var(--azul-claro);
-  text-align: center;
-}
-
-.avatar {
-  width: 110px;
-  height: 110px;
-  margin: 0 auto 16px;
-  border-radius: 50%;
-  background: var(--azul-oscuro);
-  border: 4px solid var(--naranja);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  font-weight: bold;
-  object-fit: cover;
-}
-
-.persona h3 {
-  color: var(--azul-oscuro);
-  margin-bottom: 4px;
-}
-
-.persona .cargo {
-  color: var(--naranja-texto);
-  font-weight: bold;
-  font-size: 0.95rem;
-  margin-bottom: 8px;
-}
-
-.persona .estado-acreditacion {
-  display: inline-block;
-  margin: 4px 0 16px;
-  padding: 5px 12px;
-  border: 1px solid #b7e4c7;
+.equipo-carrusel-ventana {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
   border-radius: 20px;
-  background: #e9f8ee;
-  color: #18753a;
+}
+
+.equipo-carrusel-ventana::-webkit-scrollbar {
+  display: none;
+}
+
+.equipo-carrusel-pista {
+  display: flex;
+}
+
+.equipo-carrusel-pista .equipo-slide {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.85fr) minmax(0, 1.15fr);
+  flex: 0 0 100%;
+  min-width: 0;
+  min-height: 360px;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 20px;
+  scroll-snap-align: start;
+}
+
+.equipo-slide-foto {
+  min-width: 0;
+  min-height: 360px;
+  overflow: hidden;
+  background: var(--azul-oscuro);
+}
+
+.equipo-retrato {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.equipo-slide-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 36px clamp(24px, 5vw, 56px);
+}
+
+.equipo-rol {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: #fff0e8;
+  color: var(--naranja-texto);
   font-size: 0.85rem;
   font-weight: bold;
 }
 
-.datos-certificacion {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.equipo-rol.acreditacion {
+  border: 1px solid #b7e4c7;
+  background: #e9f8ee;
+  color: #18753a;
+}
+
+.equipo-slide-info h3 {
+  color: var(--azul-oscuro);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.2;
+}
+
+.equipo-linea {
+  display: block;
+  width: 56px;
+  height: 4px;
+  margin: 16px 0;
+  border-radius: 4px;
+  background: var(--naranja);
+}
+
+.equipo-slide-info .datos-certificacion {
   text-align: left;
 }
 
-.datos-certificacion li {
-  margin-top: 9px;
-  line-height: 1.5;
+.secretaria-descripcion {
+  font-size: 1.05rem;
 }
 
-.datos-certificacion strong {
+.equipo-carrusel-controles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.equipo-carrusel-btn {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--naranja);
+  border-radius: 50%;
+  background: var(--azul-oscuro);
+  color: white;
+  font-size: 1.7rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.equipo-carrusel-btn:hover {
+  background: var(--azul-profundo);
+  transform: scale(1.05);
+}
+
+.equipo-carrusel-posicion {
+  min-width: 48px;
   color: var(--azul-oscuro);
+  font-weight: bold;
+  text-align: center;
 }
 
+.equipo-carrusel-puntos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 12px;
+}
+
+.equipo-carrusel-punto {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #bddcf5;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.equipo-carrusel-punto.activo {
+  background: var(--naranja);
+  transform: scale(1.25);
+}
+
+.solo-lector {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 650px) {
+  #equipo .equipo-carrusel {
+    max-width: 380px;
+  }
+
+  .equipo-carrusel-pista .equipo-slide {
+    grid-template-columns: 1fr;
+  }
+
+  .equipo-slide-foto {
+    min-height: 250px;
+    max-height: 280px;
+  }
+
+  .equipo-retrato {
+    min-height: 250px;
+    max-height: 280px;
+  }
+}
 .llamada {
   background: var(--azul-oscuro);
   border-top: 6px solid var(--naranja);
