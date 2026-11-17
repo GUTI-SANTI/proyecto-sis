@@ -1,3 +1,8 @@
+
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -25,6 +30,7 @@ body {
   background: var(--fondo);
   color: var(--texto);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 a:focus-visible,
@@ -32,6 +38,11 @@ button:focus-visible {
   outline: 3px solid var(--naranja);
   outline-offset: 3px;
 }
+
+
+/* =========================================
+   PORTADA PRINCIPAL
+========================================= */
 
 .hero {
   min-height: 490px;
@@ -88,6 +99,11 @@ button:focus-visible {
   transform: translateY(-3px);
 }
 
+
+/* =========================================
+   ESTRUCTURA Y TÍTULOS
+========================================= */
+
 main {
   max-width: 1150px;
   margin: auto;
@@ -121,6 +137,11 @@ section {
   text-align: center;
   margin: 0 auto 30px;
 }
+
+
+/* =========================================
+   PROGRAMAS
+========================================= */
 
 .programas {
   display: grid;
@@ -205,6 +226,11 @@ section {
 .expandible:focus .pista {
   display: none;
 }
+
+
+/* =========================================
+   BENEFICIOS Y BLOQUES INFORMATIVOS
+========================================= */
 
 .porque {
   display: flex;
@@ -291,6 +317,11 @@ section {
 .porque-info > .btn {
   margin-top: 24px;
 }
+
+
+/* =========================================
+   TARJETA INTERACTIVA DE METAS
+========================================= */
 
 .metas {
   position: relative;
@@ -422,6 +453,11 @@ section {
   opacity: 0;
 }
 
+
+/* =========================================
+   EQUIPO: ESTILOS GENERALES
+========================================= */
+
 .equipo {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -493,6 +529,11 @@ section {
   color: var(--azul-oscuro);
 }
 
+
+/* =========================================
+   LLAMADO A LA ACCIÓN
+========================================= */
+
 .llamada {
   background: var(--azul-oscuro);
   border-top: 6px solid var(--naranja);
@@ -511,6 +552,11 @@ section {
   max-width: 600px;
   margin: 0 auto 22px;
 }
+
+
+/* =========================================
+   CARRUSEL DE GALERÍA
+========================================= */
 
 .carrusel {
   position: relative;
@@ -613,6 +659,11 @@ section {
   transform: scale(1.25);
 }
 
+
+/* =========================================
+   REDES SOCIALES
+========================================= */
+
 .redes {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -677,6 +728,11 @@ section {
   background: var(--azul-oscuro);
   color: white;
 }
+
+
+/* =========================================
+   PIE DE PÁGINA
+========================================= */
 
 footer {
   background: var(--azul-profundo);
@@ -841,7 +897,11 @@ footer a {
   font-weight: bold;
 }
 
-/* Encabezado */
+
+/* =========================================
+   ENCABEZADO Y NAVEGACIÓN
+========================================= */
+
 .site-header {
   display: block;
   padding: 20px 2.5% 18px;
@@ -986,6 +1046,11 @@ footer a {
   color: white;
 }
 
+
+/* =========================================
+   BOTÓN DE CARRITO
+========================================= */
+
 .carrito-btn {
   display: flex;
   flex: 0 0 90px;
@@ -1034,6 +1099,11 @@ footer a {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+
+
+/* =========================================
+   LÍNEA DE TIEMPO DE HISTORIA
+========================================= */
 
 .linea-tiempo {
   width: 100%;
@@ -1136,6 +1206,11 @@ footer a {
 .historia-imagen.cambiando {
   opacity: 0.35;
 }
+
+
+/* =========================================
+   TIENDA DIGITAL
+========================================= */
 
 .tienda-fondo {
   position: fixed;
@@ -1256,6 +1331,11 @@ body.tienda-abierta {
   overflow: hidden;
 }
 
+
+/* =========================================
+   SUBTÍTULO DE PROGRAMAS
+========================================= */
+
 #programas > h3 {
   max-width: 650px;
   margin: 0 auto 28px;
@@ -1264,7 +1344,11 @@ body.tienda-abierta {
   text-align: center;
 }
 
-/* Carrusel del equipo */
+
+/* =========================================
+   CARRUSEL DEL EQUIPO
+========================================= */
+
 #equipo .equipo-carrusel {
   max-width: 1000px;
   margin: 0 auto;
@@ -1433,16 +1517,838 @@ body.tienda-abierta {
   border: 0;
 }
 
+
+/* =========================================
+   ADAPTACIÓN PARA TABLETAS Y COMPUTADORES
+========================================= */
+
+@media (max-width: 1024px) {
+
+  main {
+    max-width: 100%;
+    padding: 50px 25px;
+  }
+
+  .pie-contenido {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 35px;
+  }
+
+  .encabezado-superior {
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+
+  .marca-logo {
+    width: 110px;
+    height: 110px;
+    flex-basis: 110px;
+  }
+
+  .equipo-carrusel-pista .equipo-slide {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  }
+
+  .equipo-slide-info {
+    padding: 30px;
+  }
+}
+
+
+/* =========================================
+   TABLETAS Y CELULARES GRANDES
+========================================= */
+
+@media (max-width: 768px) {
+
+  main {
+    padding: 40px 20px;
+  }
+
+  section {
+    margin-bottom: 50px;
+  }
+
+  .hero {
+    min-height: 420px;
+    padding: 60px 7%;
+    background-position: center;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.1rem, 6vw, 3rem);
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .titulo {
+    font-size: 1.75rem;
+  }
+
+  .descripcion {
+    font-size: 0.96rem;
+  }
+
+
+  /* Encabezado */
+
+  .site-header {
+    padding: 15px 3% 12px;
+  }
+
+  .encabezado-superior {
+    min-height: auto;
+    gap: 10px;
+  }
+
+  .marca {
+    gap: 10px;
+  }
+
+  .marca-logo {
+    width: 90px;
+    height: 90px;
+    flex-basis: 90px;
+  }
+
+  .marca-texto {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    white-space: normal;
+  }
+
+  .pago-btn,
+  .carrito-btn {
+    width: 82px;
+    min-height: 85px;
+    flex-basis: 82px;
+  }
+
+  .pago-circulo,
+  .carrito-circulo {
+    width: 44px;
+    height: 44px;
+  }
+
+  .menu-principal {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .menu-enlace,
+  .menu-enlace:nth-child(5),
+  .menu-enlace:nth-child(6) {
+    grid-column: auto;
+    min-height: 52px;
+    padding: 9px 6px;
+    font-size: 0.9rem;
+    border-left: 1px solid var(--naranja);
+  }
+
+  .menu-enlace:nth-child(3n + 1) {
+    border-left: 0;
+  }
+
+
+  /* Bloques de información */
+
+  .porque {
+    flex-direction: column;
+  }
+
+  .porque.invertido {
+    flex-direction: column;
+  }
+
+  .porque-imagen {
+    flex: auto;
+    width: 100%;
+    min-height: 280px;
+    height: 280px;
+  }
+
+  .porque-info {
+    padding: 30px;
+  }
+
+  .metas {
+    max-width: 500px;
+  }
+
+
+  /* Programas */
+
+  .programas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .tarjeta {
+    padding: 22px;
+  }
+
+
+  /* Historia */
+
+  .linea-tiempo-puntos {
+    gap: 5px;
+  }
+
+  .momento-tiempo {
+    font-size: 0.8rem;
+  }
+
+  .momento-detalle {
+    padding: 16px;
+  }
+
+
+  /* Carrusel del equipo */
+
+  .equipo-carrusel-pista .equipo-slide {
+    grid-template-columns: 1fr;
+  }
+
+  .equipo-slide-foto {
+    min-height: 300px;
+    height: 300px;
+  }
+
+  .equipo-retrato {
+    min-height: 300px;
+    height: 300px;
+    object-position: center 25%;
+  }
+
+  .equipo-slide-info {
+    padding: 28px;
+  }
+
+
+  /* Tienda */
+
+  .tienda-panel {
+    width: 75vw;
+    min-width: 0;
+    max-width: 520px;
+    padding: 25px;
+  }
+
+  .tienda-contenido {
+    padding: 30px 20px;
+  }
+
+
+  /* Pie de página */
+
+  .pie-contenido {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+    padding: 45px 25px;
+  }
+
+  .pie-identidad {
+    flex-wrap: wrap;
+  }
+
+
+  /* Redes */
+
+  .redes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* =========================================
+   CELULARES
+========================================= */
+
+@media (max-width: 560px) {
+
+  body {
+    font-size: 15px;
+  }
+
+  main {
+    padding: 30px 14px;
+  }
+
+  section {
+    margin-bottom: 42px;
+    scroll-margin-top: 12px;
+  }
+
+  .hero {
+    min-height: 390px;
+    padding: 45px 22px;
+    background-position: center;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 0.98rem;
+  }
+
+  .etiqueta {
+    font-size: 0.8rem;
+  }
+
+  .btn {
+    padding: 11px 20px;
+    font-size: 0.9rem;
+  }
+
+  .titulo {
+    font-size: 1.55rem;
+  }
+
+  .descripcion {
+    font-size: 0.92rem;
+    margin-bottom: 24px;
+  }
+
+
+  /* Encabezado en dos filas */
+
+  .site-header {
+    padding: 12px 12px 10px;
+  }
+
+  .encabezado-superior {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 0 0 14px;
+  }
+
+  .encabezado-superior > .marca {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    justify-self: center;
+    justify-content: center;
+  }
+
+  .marca-logo {
+    width: 76px;
+    height: 76px;
+    flex-basis: 76px;
+    border-radius: 14px;
+  }
+
+  .marca-texto {
+    font-size: clamp(1.3rem, 5vw, 1.8rem);
+  }
+
+  .encabezado-superior > .carrito-btn {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: center;
+  }
+
+  .encabezado-superior > .pago-btn {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: center;
+  }
+
+  .pago-btn,
+  .carrito-btn {
+    width: 100%;
+    max-width: 135px;
+    min-height: 75px;
+    flex-basis: auto;
+    flex-direction: row;
+    gap: 8px;
+    padding: 8px;
+    border-radius: 12px;
+  }
+
+  .pago-circulo,
+  .carrito-circulo {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+  }
+
+  .pago-circulo {
+    font-size: 1.3rem;
+  }
+
+  .carrito-icono {
+    width: 21px;
+    height: 21px;
+  }
+
+  .pago-etiqueta,
+  .carrito-etiqueta {
+    font-size: 0.72rem;
+  }
+
+
+  /* Menú de navegación */
+
+  .menu-principal {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid rgba(91, 172, 235, 0.3);
+  }
+
+  .menu-enlace,
+  .menu-enlace:nth-child(5),
+  .menu-enlace:nth-child(6) {
+    grid-column: auto;
+    min-height: 46px;
+    padding: 8px 5px;
+    font-size: 0.84rem;
+    border-left: 1px solid var(--naranja);
+    border-bottom: 1px solid rgba(91, 172, 235, 0.15);
+  }
+
+  .menu-enlace:nth-child(2n + 1) {
+    border-left: 0;
+  }
+
+
+  /* Tarjetas */
+
+  .programas {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .tarjeta {
+    padding: 22px;
+  }
+
+  .tarjeta h3 {
+    font-size: 1.1rem;
+  }
+
+
+  /* Beneficios */
+
+  .porque {
+    border-radius: 15px;
+  }
+
+  .porque-imagen {
+    height: 230px;
+    min-height: 230px;
+  }
+
+  .porque-info {
+    padding: 24px 20px;
+  }
+
+  .porque-titulo {
+    font-size: 1.4rem;
+  }
+
+  .porque-lista {
+    gap: 14px;
+  }
+
+  .porque-lista li {
+    gap: 10px;
+  }
+
+  .porque-info > p {
+    font-size: 0.95rem;
+  }
+
+
+  /* Metas */
+
+  .metas {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 15px;
+  }
+
+  .metas img {
+    border-radius: 15px;
+  }
+
+  .metas-detalle {
+    padding: 22px;
+  }
+
+  .metas-detalle .icono {
+    font-size: 1.8rem;
+  }
+
+  .metas-detalle .porque-titulo {
+    font-size: 1.25rem;
+  }
+
+  .metas-detalle p {
+    font-size: 0.88rem;
+    margin-bottom: 8px;
+  }
+
+  .metas-detalle li {
+    font-size: 0.84rem;
+    margin-bottom: 5px;
+  }
+
+  .pista-img {
+    left: 10px;
+    bottom: 10px;
+    padding: 6px 11px;
+    font-size: 0.76rem;
+  }
+
+  .metas-icono {
+    font-size: 4rem;
+  }
+
+
+  /* Línea de tiempo */
+
+  .linea-tiempo {
+    margin-top: 18px;
+  }
+
+  .linea-tiempo-puntos {
+    gap: 2px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .linea-tiempo-puntos::before {
+    left: 15%;
+    right: 15%;
+  }
+
+  .momento-tiempo {
+    width: 33.333%;
+    padding: 0 2px;
+    font-size: 0.72rem;
+    overflow-wrap: anywhere;
+  }
+
+  .momento-tiempo::before {
+    width: 25px;
+    height: 25px;
+    flex-basis: 25px;
+  }
+
+  .momento-detalle {
+    padding: 15px;
+  }
+
+  .momento-detalle p {
+    font-size: 0.9rem;
+  }
+
+
+  /* Galería */
+
+  .carrusel {
+    width: 100%;
+  }
+
+  .diapositiva {
+    aspect-ratio: 4 / 3;
+  }
+
+  .diapositiva figcaption {
+    padding: 28px 14px 12px;
+    font-size: 0.88rem;
+  }
+
+  .carrusel-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.3rem;
+  }
+
+  .carrusel-btn.anterior {
+    left: 7px;
+  }
+
+  .carrusel-btn.siguiente {
+    right: 7px;
+  }
+
+  .puntos {
+    gap: 8px;
+  }
+
+  .punto {
+    width: 11px;
+    height: 11px;
+  }
+
+
+  /* Equipo */
+
+  .equipo-carrusel-pista .equipo-slide {
+    min-height: auto;
+    border-radius: 15px;
+  }
+
+  .equipo-slide-foto {
+    height: 270px;
+    min-height: 270px;
+  }
+
+  .equipo-retrato {
+    height: 270px;
+    min-height: 270px;
+  }
+
+  .equipo-slide-info {
+    padding: 23px 19px;
+  }
+
+  .equipo-slide-info h3 {
+    font-size: 1.45rem;
+    overflow-wrap: anywhere;
+  }
+
+  .equipo-slide-info .datos-certificacion {
+    font-size: 0.9rem;
+  }
+
+  .equipo-carrusel-controles {
+    gap: 13px;
+  }
+
+  .equipo-carrusel-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+
+  /* Redes */
+
+  .redes {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .redes-tarjeta {
+    padding: 24px 18px;
+  }
+
+  .btn-whatsapp {
+    max-width: 100%;
+    padding: 12px 18px;
+    overflow-wrap: anywhere;
+  }
+
+  .lista-redes {
+    gap: 9px;
+  }
+
+  .red {
+    padding: 9px 14px;
+    font-size: 0.88rem;
+  }
+
+
+  /* Inscripción */
+
+  .llamada {
+    padding: 32px 18px;
+    border-radius: 15px;
+  }
+
+  .llamada h2 {
+    font-size: 1.55rem;
+  }
+
+
+  /* Tienda */
+
+  .tienda-panel {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    padding: 20px 15px;
+    border-left: 0;
+    border-top: 5px solid var(--naranja);
+  }
+
+  .tienda-cerrar {
+    width: 42px;
+    height: 42px;
+  }
+
+  .tienda-contenido {
+    padding: 28px 17px;
+    border-radius: 15px;
+  }
+
+  .tienda-pez {
+    font-size: 3.5rem;
+  }
+
+  .tienda-mensaje {
+    font-size: 0.98rem;
+  }
+
+
+  /* Pie de página */
+
+  .pie-contenido {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 38px 22px;
+  }
+
+  .pie-identidad {
+    gap: 12px;
+  }
+
+  .pie-logo {
+    width: 65px;
+    height: 65px;
+    flex-basis: 65px;
+  }
+
+  .pie-titulo {
+    font-size: 1.6rem;
+  }
+
+  .pie-lema {
+    margin-top: 14px;
+    font-size: 0.95rem;
+  }
+
+  .pie-columna h2 {
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+  }
+
+  .pie-redes-texto {
+    max-width: 100%;
+  }
+
+  .pie-final {
+    font-size: 0.8rem;
+    padding: 15px;
+  }
+}
+
+
+/* =========================================
+   CELULARES PEQUEÑOS
+========================================= */
+
+@media (max-width: 380px) {
+
+  main {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+
+  .marca-logo {
+    width: 65px;
+    height: 65px;
+    flex-basis: 65px;
+  }
+
+  .marca-texto {
+    font-size: 1.2rem;
+  }
+
+  .pago-btn,
+  .carrito-btn {
+    max-width: 125px;
+  }
+
+  .pago-etiqueta,
+  .carrito-etiqueta {
+    font-size: 0.66rem;
+  }
+
+  .menu-enlace {
+    font-size: 0.77rem;
+  }
+
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .metas-detalle {
+    padding: 16px;
+  }
+
+  .metas-detalle p,
+  .metas-detalle li {
+    font-size: 0.8rem;
+  }
+
+  .momento-tiempo {
+    font-size: 0.67rem;
+  }
+
+  .equipo-slide-info {
+    padding: 20px 15px;
+  }
+}
+
+
+/* =========================================
+   ACCESIBILIDAD Y AJUSTES GENERALES
+========================================= */
+
 @media (prefers-reduced-motion: reduce) {
+
   html {
     scroll-behavior: auto;
   }
 
-  .carrusel-pista {
-    scroll-behavior: auto;
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
+}
 
-  .btn,
-  .tarjeta,
-  .btn-whatsapp,
-  .
+
+/* Evita desbordamientos de imágenes */
+
+img,
+svg {
+  max-width: 100%;
+}
+
+
+/* Mantiene la tipografía de los controles */
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+
+/* Evita que los elementos superen el ancho disponible */
+
+.porque-info,
+.equipo-slide-info,
+.tarjeta,
+.redes-tarjeta {
+  min-width: 0;
+}
+
+
+/* Permite que los textos largos se ajusten */
+
+p,
+h1,
+h2,
+h3,
+h4,
+li {
+  overflow-wrap: break-word;
+}
+
