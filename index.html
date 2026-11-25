@@ -33,8 +33,8 @@
         </span>
       </a>
 
-      <a href="img/qr-mensualidad.png" class="pago-btn" target="_blank" rel="noopener noreferrer"
-        aria-label="Pagar mensualidad: abrir código QR en una pestaña nueva">
+      <a href="#pagar-mensualidad" class="pago-btn"
+        aria-label="Ir a la sección para pagar mensualidad">
         <span class="pago-circulo" aria-hidden="true">💳</span>
         <span class="pago-etiqueta">PAGAR MENSUALIDAD</span>
       </a>
@@ -347,6 +347,64 @@
       </div>
     </section>
 
+
+    <section id="pagar-mensualidad" class="seccion-pagos">
+      <h2 class="titulo">Paga tu mensualidad</h2>
+      <p class="descripcion">
+        Selecciona el programa al que perteneces y el medio de pago que prefieras.
+        Antes de transferir, verifica el valor y los datos de la cuenta.
+      </p>
+
+      <div class="pagos-contenido">
+        <div class="pago-paso">
+          <label for="programa-pago">1. Selecciona tu programa</label>
+          <select id="programa-pago" class="pago-select">
+            <option value="">Elige un programa</option>
+            <option value="infantil">Natación infantil</option>
+            <option value="principiantes">Clases para principiantes</option>
+            <option value="deportivo">Entrenamiento deportivo</option>
+            <option value="adultos">Natación para adultos</option>
+          </select>
+          <div class="pago-total" aria-live="polite" aria-atomic="true">
+            <span>Valor de tu mensualidad</span>
+            <strong id="valor-mensualidad">Selecciona un programa</strong>
+          </div>
+        </div>
+
+        <div class="pago-paso">
+          <p class="pago-etiqueta-paso">2. Elige cómo deseas pagar</p>
+          <div class="metodos-pago" role="group" aria-label="Medios de pago">
+            <button type="button" class="metodo-pago" data-metodo="nequi" aria-pressed="false">
+              <span aria-hidden="true">💜</span> Nequi
+            </button>
+            <button type="button" class="metodo-pago" data-metodo="breb" aria-pressed="false">
+              <span aria-hidden="true">🔵</span> Bre-B
+            </button>
+          </div>
+
+          <div id="datos-nequi" class="datos-pago" hidden aria-live="polite">
+            <h3>Paga por Nequi</h3>
+            <p><strong>Número Nequi:</strong> <span id="numero-nequi">PENDIENTE DE CONFIGURAR</span></p>
+            <img src="img/qr-nequi.png" alt="Código QR de Nequi" class="qr-pago" loading="lazy">
+            <p class="ayuda-qr">Escanea el código QR desde la aplicación Nequi.</p>
+          </div>
+
+          <div id="datos-breb" class="datos-pago" hidden aria-live="polite">
+            <h3>Paga por Bre-B</h3>
+            <p><strong>Llave Bre-B:</strong> <span id="llave-breb">PENDIENTE DE CONFIGURAR</span></p>
+            <img src="img/qr-breb.png" alt="Código QR de la llave Bre-B" class="qr-pago" loading="lazy">
+            <p class="ayuda-qr">Escanea el código QR desde la aplicación de tu entidad financiera.</p>
+          </div>
+        </div>
+
+        <p class="aviso-pago">
+          Importante: el sitio muestra los datos para realizar la transferencia, pero no confirma
+          automáticamente el pago. Conserva el comprobante y compártelo con la administración del club
+          para que puedan validar la transferencia.
+        </p>
+      </div>
+    </section>
+
     <section id="equipo">
       <h2 class="titulo">Nuestro equipo</h2>
       <p class="descripcion">
@@ -554,6 +612,58 @@
       <p class="tienda-mensaje">Estamos trabajando y programando para traer sus productos favoritos.</p>
     </div>
   </aside>
+
+
+  <script>
+    (function () {
+      // CONFIGURACIÓN: reemplaza null por el valor mensual de cada programa (solo números).
+      // Ejemplo: infantil: 120000
+      var valoresMensualidad = {
+        infantil: null,
+        principiantes: null,
+        deportivo: null,
+        adultos: null
+      };
+
+      // CONFIGURACIÓN: reemplaza estos textos por los datos oficiales del club.
+      var numeroNequi = 'PENDIENTE DE CONFIGURAR';
+      var llaveBreb = 'PENDIENTE DE CONFIGURAR';
+
+      var selector = document.getElementById('programa-pago');
+      var valor = document.getElementById('valor-mensualidad');
+      var botonesMetodo = document.querySelectorAll('.metodo-pago');
+      var datosNequi = document.getElementById('datos-nequi');
+      var datosBreb = document.getElementById('datos-breb');
+      var formatoCOP = new Intl.NumberFormat('es-CO', {
+        style: 'currency', currency: 'COP', maximumFractionDigits: 0
+      });
+
+      document.getElementById('numero-nequi').textContent = numeroNequi;
+      document.getElementById('llave-breb').textContent = llaveBreb;
+
+      selector.addEventListener('change', function () {
+        var programa = selector.value;
+        if (!programa) {
+          valor.textContent = 'Selecciona un programa';
+        } else if (typeof valoresMensualidad[programa] === 'number' && valoresMensualidad[programa] >= 0) {
+          valor.textContent = formatoCOP.format(valoresMensualidad[programa]);
+        } else {
+          valor.textContent = 'Precio pendiente de configurar';
+        }
+      });
+
+      botonesMetodo.forEach(function (boton) {
+        boton.addEventListener('click', function () {
+          var metodo = boton.getAttribute('data-metodo');
+          botonesMetodo.forEach(function (otro) {
+            otro.setAttribute('aria-pressed', otro === boton ? 'true' : 'false');
+          });
+          datosNequi.hidden = metodo !== 'nequi';
+          datosBreb.hidden = metodo !== 'breb';
+        });
+      });
+    })();
+  </script>
 
   <script>
     (function () {
