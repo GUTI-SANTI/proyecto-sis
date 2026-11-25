@@ -2352,3 +2352,173 @@ li {
   overflow-wrap: break-word;
 }
 
+
+
+/* =========================================
+   PAGOS DE MENSUALIDAD
+========================================= */
+
+.seccion-pagos {
+  scroll-margin-top: 28px;
+}
+
+.pagos-contenido {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 30px;
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-top: 5px solid var(--naranja);
+  border-radius: 18px;
+  box-shadow: 0 8px 25px #00338015;
+}
+
+.pago-paso + .pago-paso {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--borde);
+}
+
+.pago-paso > label,
+.pago-etiqueta-paso {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--azul-oscuro);
+  font-size: 1.08rem;
+  font-weight: 700;
+}
+
+.pago-select {
+  display: block;
+  width: 100%;
+  min-height: 50px;
+  padding: 12px 14px;
+  border: 1px solid #9bbfe0;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--texto);
+  font: inherit;
+}
+
+.pago-select:focus-visible,
+.metodo-pago:focus-visible {
+  outline: 3px solid var(--naranja);
+  outline-offset: 3px;
+}
+
+.pago-total {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 17px 20px;
+  border-radius: 12px;
+  background: #edf6ff;
+  color: var(--azul-oscuro);
+}
+
+.pago-total strong {
+  color: var(--naranja-texto);
+  font-size: 1.25rem;
+}
+
+.metodos-pago {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.metodo-pago {
+  min-height: 58px;
+  padding: 12px 18px;
+  border: 2px solid var(--azul-claro);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--azul-oscuro);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.metodo-pago:hover {
+  transform: translateY(-2px);
+  border-color: var(--naranja);
+}
+
+.metodo-pago[aria-pressed="true"] {
+  border-color: var(--naranja);
+  background: #fff3ec;
+  box-shadow: inset 0 0 0 1px var(--naranja);
+}
+
+.metodo-pago span {
+  margin-right: 6px;
+}
+
+.datos-pago {
+  margin-top: 20px;
+  padding: 22px;
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  background: #f8fbff;
+  text-align: center;
+}
+
+.datos-pago[hidden] {
+  display: none;
+}
+
+.datos-pago h3 {
+  margin-bottom: 10px;
+  color: var(--azul-oscuro);
+}
+
+.datos-pago p {
+  overflow-wrap: anywhere;
+}
+
+.qr-pago {
+  display: block;
+  width: min(100%, 230px);
+  aspect-ratio: 1;
+  margin: 18px auto 10px;
+  padding: 8px;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  background: #fff;
+  object-fit: contain;
+}
+
+.ayuda-qr {
+  color: #52657a;
+  font-size: 0.92rem;
+}
+
+.aviso-pago {
+  margin-top: 24px;
+  padding: 14px 16px;
+  border-left: 4px solid var(--naranja);
+  border-radius: 8px;
+  background: #fff7f2;
+  color: #68402b;
+  font-size: 0.94rem;
+}
+
+@media (max-width: 560px) {
+  .pagos-contenido {
+    padding: 20px 16px;
+  }
+
+  .metodos-pago {
+    grid-template-columns: 1fr;
+  }
+
+  .pago-total {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
