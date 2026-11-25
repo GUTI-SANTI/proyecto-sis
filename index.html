@@ -33,11 +33,11 @@
         </span>
       </a>
 
-      <a href="#pagar-mensualidad" class="pago-btn"
-        aria-label="Ir a la sección para pagar mensualidad">
+      <button type="button" id="abrir-pago" class="pago-btn"
+        aria-label="Abrir ventana para pagar mensualidad">
         <span class="pago-circulo" aria-hidden="true">💳</span>
         <span class="pago-etiqueta">PAGAR MENSUALIDAD</span>
-      </a>
+      </button>
     </div>
 
     <nav class="menu-principal" aria-label="Menú principal">
@@ -348,8 +348,12 @@
     </section>
 
 
-    <section id="pagar-mensualidad" class="seccion-pagos">
-      <h2 class="titulo">Paga tu mensualidad</h2>
+    <dialog id="pagar-mensualidad" class="modal-pagos" aria-labelledby="titulo-pagos">
+      <div class="modal-pagos-cabecera">
+        <h2 id="titulo-pagos" class="titulo">Paga tu mensualidad</h2>
+        <button type="button" id="cerrar-pago" class="cerrar-pago"
+          aria-label="Cerrar ventana de pago">×</button>
+      </div>
       <p class="descripcion">
         Selecciona el programa al que perteneces y el medio de pago que prefieras.
         Antes de transferir, verifica el valor y los datos de la cuenta.
@@ -403,7 +407,7 @@
           para que puedan validar la transferencia.
         </p>
       </div>
-    </section>
+    </dialog>
 
     <section id="equipo">
       <h2 class="titulo">Nuestro equipo</h2>
@@ -631,6 +635,22 @@
 
       var selector = document.getElementById('programa-pago');
       var valor = document.getElementById('valor-mensualidad');
+      var modalPagos = document.getElementById('pagar-mensualidad');
+      var abrirPago = document.getElementById('abrir-pago');
+      var cerrarPago = document.getElementById('cerrar-pago');
+
+      abrirPago.addEventListener('click', function () {
+        if (typeof modalPagos.showModal === 'function') modalPagos.showModal();
+      });
+
+      cerrarPago.addEventListener('click', function () {
+        modalPagos.close();
+      });
+
+      // Cierra al pulsar sobre el fondo oscuro, fuera del cuadro.
+      modalPagos.addEventListener('click', function (evento) {
+        if (evento.target === modalPagos) modalPagos.close();
+      });
       var botonesMetodo = document.querySelectorAll('.metodo-pago');
       var datosNequi = document.getElementById('datos-nequi');
       var datosBreb = document.getElementById('datos-breb');
@@ -873,3 +893,4 @@
   </script>
 </body>
 </html>
+
