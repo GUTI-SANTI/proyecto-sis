@@ -156,53 +156,108 @@
     </section>
 
     <section id="galeria">
-      <h2 class="titulo">Conoce nuestro club</h2>
-      <p class="descripcion">
-        Echa un vistazo a momentos especiales para nuestros entrenadores nadadores y padres.
-      </p>
+  <h2 class="titulo">Galería Caribes Acuáticos</h2>
+  <p class="descripcion">
+    Revive nuestros entrenamientos, competencias y momentos especiales.
+    Selecciona una fotografía para verla ampliada.
+  </p>
 
-      <div class="carrusel" role="region" aria-roledescription="carrusel" aria-label="Fotos del club">
-        <div class="carrusel-pista">
-          <figure class="diapositiva bandera">
-            <img src="img/grupowilki.jpeg" alt="Integrantes de Caribes Acuáticos sosteniendo la bandera del club">
-            <figcaption>Equipo competitivo.</figcaption>
-          </figure>
-          <figure class="diapositiva">
-            <img src="img/BANDERA.CLUB-carrusel.jpg" alt="Equipo del club con su bandera oficial" loading="lazy">
-            <figcaption>Equipo del club con su bandera oficial.</figcaption>
-          </figure>
-          <figure class="diapositiva">
-            <img src="img/COMPETENCIAS-MENORES.jpeg" alt="Equipo del club en una competencia" loading="lazy">
-            <figcaption>Grupo de menores en competencia.</figcaption>
-          </figure>
-          <figure class="diapositiva">
-            <img src="img/interligas.jpeg" alt="Club caribes haciendo parte de la Seleccion Meta" loading="lazy">
-            <figcaption>Club caribes haciendo parte de la Seleccion Meta.</figcaption>
-          </figure>
-          <figure class="diapositiva">
-            <img src="img/PODIO.jpg" alt="Nadadores en el podio nacional FECNA" loading="lazy">
-            <figcaption>Podio Nacional FECNA.</figcaption>
-          </figure>
-          <figure class="diapositiva">
-            <img src="img/cometencias.2.jpeg" alt="Grupo de competencias nacionales." loading="lazy">
-            <figcaption>Grupo de competencias nacionales.</figcaption>
-          </figure>
-          <figure class="diapositiva">
-            <img src="img/grupop.jpg" alt="Grupo en las piscinas olimpicas" loading="lazy">
-            <figcaption>Grupo en las piscinas olimpicas .</figcaption>
-          </figure>
-          <figure class="diapositiva">
-            <img src="img/padres.jpg" alt="Padres del club" loading="lazy">
-            <figcaption>Padres del club.</figcaption>
-          </figure>
-        </div>
+  <div class="galeria-pestanas" role="tablist" aria-label="Páginas de la galería">
+    <button class="galeria-pestana activa" id="galeria-tab-1" type="button"
+      role="tab" aria-selected="true" aria-controls="galeria-panel-1" data-pagina="1">
+      Galería 1 <span>· 9 fotos</span>
+    </button>
+    <button class="galeria-pestana" id="galeria-tab-2" type="button"
+      role="tab" aria-selected="false" aria-controls="galeria-panel-2" data-pagina="2" tabindex="-1">
+      Galería 2 <span>· 6 fotos</span>
+    </button>
+  </div>
 
-        <button type="button" class="carrusel-btn anterior" aria-label="Foto anterior">‹</button>
-        <button type="button" class="carrusel-btn siguiente" aria-label="Foto siguiente">›</button>
-      </div>
+  <div class="galeria-panel" id="galeria-panel-1" role="tabpanel" aria-labelledby="galeria-tab-1">
+    <div class="galeria-cuadricula">
+      <button class="galeria-foto" type="button" data-imagen="img/grupowilki.jpeg" data-descripcion="Equipo competitivo">
+        <img src="img/grupowilki.jpeg" alt="Integrantes de Caribes Acuáticos sosteniendo la bandera del club" loading="lazy">
+        <span>Equipo competitivo</span>
+      </button>
+      <button class="galeria-foto" type="button" data-imagen="img/BANDERA.CLUB-carrusel.jpg" data-descripcion="Equipo con la bandera oficial">
+        <img src="img/BANDERA.CLUB-carrusel.jpg" alt="Equipo del club con su bandera oficial" loading="lazy">
+        <span>Bandera del club</span>
+      </button>
+      <button class="galeria-foto" type="button" data-imagen="img/COMPETENCIAS-MENORES.jpeg" data-descripcion="Grupo de menores en competencia">
+        <img src="img/COMPETENCIAS-MENORES.jpeg" alt="Equipo del club en una competencia" loading="lazy">
+        <span>Competencias menores</span>
+      </button>
+      <button class="galeria-foto" type="button" data-imagen="img/interligas.jpeg" data-descripcion="Caribes en la Selección Meta">
+        <img src="img/interligas.jpeg" alt="Club Caribes haciendo parte de la Selección Meta" loading="lazy">
+        <span>Selección Meta</span>
+      </button>
+      <button class="galeria-foto" type="button" data-imagen="img/PODIO.jpg" data-descripcion="Podio Nacional FECNA">
+        <img src="img/PODIO.jpg" alt="Nadadores en el podio nacional FECNA" loading="lazy">
+        <span>Podio nacional</span>
+      </button>
+      <button class="galeria-foto" type="button" data-imagen="img/cometencias.2.jpeg" data-descripcion="Grupo de competencias nacionales">
+        <img src="img/cometencias.2.jpeg" alt="Grupo de competencias nacionales" loading="lazy">
+        <span>Competencias nacionales</span>
+      </button>
+      <button class="galeria-foto" type="button" data-imagen="img/grupop.jpg" data-descripcion="Grupo en las piscinas olímpicas">
+        <img src="img/grupop.jpg" alt="Grupo en las piscinas olímpicas" loading="lazy">
+        <span>En las piscinas</span>
+      </button>
+      <button class="galeria-foto" type="button" data-imagen="img/padres.jpg" data-descripcion="Familias de Caribes Acuáticos">
+        <img src="img/padres.jpg" alt="Padres del club" loading="lazy">
+        <span>Familias Caribes</span>
+      </button>
+      <button class="galeria-foto" type="button" data-imagen="img/galeria/foto-09.jpg" data-descripcion="Nueva fotografía de Caribes">
+        <img src="img/galeria/foto-09.jpg" alt="Fotografía 9 de la galería Caribes Acuáticos" loading="lazy">
+        <span>Momento Caribes 09</span>
+      </button>
+    </div>
+  </div>
 
-      <div class="puntos" id="puntos"></div>
-    </section>
+  <div class="galeria-panel" id="galeria-panel-2" role="tabpanel" aria-labelledby="galeria-tab-2" hidden>
+    <div class="galeria-cuadricula">
+      <button class="galeria-foto" type="button" data-imagen="img/galeria/foto-10.jpg" data-descripcion="Fotografía 10 de Caribes">
+        <img src="img/galeria/foto-10.jpg" alt="Fotografía 10 de la galería Caribes Acuáticos" loading="lazy">
+        <span>Momento Caribes 10</span>
+      </button>
+      <button class="galeria-foto" type="button" data-imagen="img/galeria/foto-11.jpg" data-descripcion="Fotografía 11 de Caribes">
+        <img src="img/galeria/foto-11.jpg" alt="Fotografía 11 de la galería Caribes Acuáticos" loading="lazy">
+        <span>Momento Caribes 11</span>
+      </button>
+      <button class="galeria-foto" type="button" data-imagen="img/galeria/foto-12.jpg" data-descripcion="Fotografía 12 de Caribes">
+        <img src="img/galeria/foto-12.jpg" alt="Fotografía 12 de la galería Caribes Acuáticos" loading="lazy">
+        <span>Momento Caribes 12</span>
+      </button>
+      <button class="galeria-foto" type="button" data-imagen="img/galeria/foto-13.jpg" data-descripcion="Fotografía 13 de Caribes">
+        <img src="img/galeria/foto-13.jpg" alt="Fotografía 13 de la galería Caribes Acuáticos" loading="lazy">
+        <span>Momento Caribes 13</span>
+      </button>
+      <button class="galeria-foto" type="button" data-imagen="img/galeria/foto-14.jpg" data-descripcion="Fotografía 14 de Caribes">
+        <img src="img/galeria/foto-14.jpg" alt="Fotografía 14 de la galería Caribes Acuáticos" loading="lazy">
+        <span>Momento Caribes 14</span>
+      </button>
+      <button class="galeria-foto" type="button" data-imagen="img/galeria/foto-15.jpg" data-descripcion="Fotografía 15 de Caribes">
+        <img src="img/galeria/foto-15.jpg" alt="Fotografía 15 de la galería Caribes Acuáticos" loading="lazy">
+        <span>Momento Caribes 15</span>
+      </button>
+    </div>
+  </div>
+  <p class="galeria-ayuda">Puedes cambiar de pestaña para ver las 15 fotografías.</p>
+</section>
+
+<dialog id="visor-galeria" class="visor-galeria" aria-label="Fotografía ampliada">
+  <div class="visor-galeria-contenido">
+    <button type="button" class="visor-cerrar" id="visor-cerrar" aria-label="Cerrar fotografía">×</button>
+    <button type="button" class="visor-flecha visor-anterior" id="visor-anterior" aria-label="Fotografía anterior">‹</button>
+    <figure class="visor-figura">
+      <img id="visor-imagen" src="" alt="">
+      <figcaption id="visor-descripcion"></figcaption>
+    </figure>
+    <button type="button" class="visor-flecha visor-siguiente" id="visor-siguiente" aria-label="Fotografía siguiente">›</button>
+    <p class="visor-contador" id="visor-contador" aria-live="polite"></p>
+  </div>
+</dialog>
+
 
     <section id="ubicacion">
       <h2 class="titulo">¿Dónde estamos ubicados?</h2>
@@ -379,10 +434,10 @@
           <p class="pago-etiqueta-paso">2. Elige cómo deseas pagar</p>
           <div class="metodos-pago" role="group" aria-label="Medios de pago">
             <button type="button" class="metodo-pago" data-metodo="nequi" aria-pressed="false">
-              <span aria-hidden="true">📲</span> Nequi
+              <span aria-hidden="true">💜</span> Nequi
             </button>
             <button type="button" class="metodo-pago" data-metodo="breb" aria-pressed="false">
-              <span aria-hidden="true">🔑</span> Bre-B
+              <span aria-hidden="true">🔵</span> Bre-B
             </button>
           </div>
 
@@ -731,67 +786,6 @@
       });
     })();
 
-    (function () {
-      var pista = document.querySelector('.carrusel-pista');
-      var diapositivas = pista.querySelectorAll('.diapositiva');
-      var anterior = document.querySelector('.carrusel-btn.anterior');
-      var siguiente = document.querySelector('.carrusel-btn.siguiente');
-      var contenedorPuntos = document.getElementById('puntos');
-      var total = diapositivas.length;
-      var pausado = false;
-
-      for (var i = 0; i < total; i++) {
-        var punto = document.createElement('button');
-        punto.type = 'button';
-        punto.className = 'punto';
-        punto.setAttribute('aria-label', 'Ir a la foto ' + (i + 1));
-        punto.dataset.indice = i;
-        contenedorPuntos.appendChild(punto);
-      }
-
-      var puntos = contenedorPuntos.querySelectorAll('.punto');
-
-      function actual() {
-        return Math.round(pista.scrollLeft / pista.clientWidth);
-      }
-
-      function ir(indice) {
-        indice = (indice + total) % total;
-        pista.scrollTo({ left: indice * pista.clientWidth, behavior: 'smooth' });
-      }
-
-      function marcarPunto() {
-        var a = actual();
-        puntos.forEach(function (p, i) {
-          p.classList.toggle('activo', i === a);
-          if (i === a) p.setAttribute('aria-current', 'true');
-          else p.removeAttribute('aria-current');
-        });
-      }
-
-      anterior.addEventListener('click', function () { ir(actual() - 1); });
-      siguiente.addEventListener('click', function () { ir(actual() + 1); });
-
-      contenedorPuntos.addEventListener('click', function (e) {
-        if (e.target.dataset.indice !== undefined) ir(Number(e.target.dataset.indice));
-      });
-
-      pista.addEventListener('scroll', marcarPunto);
-      marcarPunto();
-
-      var carrusel = document.querySelector('.carrusel');
-      carrusel.addEventListener('mouseenter', function () { pausado = true; });
-      carrusel.addEventListener('mouseleave', function () { pausado = false; });
-      carrusel.addEventListener('focusin', function () { pausado = true; });
-      carrusel.addEventListener('focusout', function () { pausado = false; });
-
-      var menosMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (!menosMovimiento) {
-        setInterval(function () {
-          if (!pausado && !document.hidden) ir(actual() + 1);
-        }, 5000);
-      }
-    })();
 
     (function () {
       var linea = document.querySelector('.linea-tiempo');
@@ -890,6 +884,103 @@
 
       actualizar();
     })();
+  
+    (function () {
+      var pestanas = Array.from(document.querySelectorAll('.galeria-pestana'));
+      var paneles = Array.from(document.querySelectorAll('.galeria-panel'));
+      var botonesFoto = Array.from(document.querySelectorAll('.galeria-foto'));
+      var visor = document.getElementById('visor-galeria');
+      var imagenVisor = document.getElementById('visor-imagen');
+      var descripcionVisor = document.getElementById('visor-descripcion');
+      var contadorVisor = document.getElementById('visor-contador');
+      var cerrarVisor = document.getElementById('visor-cerrar');
+      var anteriorVisor = document.getElementById('visor-anterior');
+      var siguienteVisor = document.getElementById('visor-siguiente');
+      if (!pestanas.length || !visor || !botonesFoto.length) return;
+
+      var indiceActual = 0;
+      var ultimoDisparador = null;
+      var reducirMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function seleccionarPestana(numero, moverFoco) {
+        pestanas.forEach(function (pestana) {
+          var activa = pestana.dataset.pagina === String(numero);
+          pestana.classList.toggle('activa', activa);
+          pestana.setAttribute('aria-selected', String(activa));
+          pestana.tabIndex = activa ? 0 : -1;
+        });
+        paneles.forEach(function (panel) {
+          panel.hidden = panel.id !== 'galeria-panel-' + numero;
+        });
+        if (moverFoco) {
+          document.getElementById('galeria-tab-' + numero).focus();
+        }
+      }
+
+      pestanas.forEach(function (pestana, indice) {
+        pestana.addEventListener('click', function () {
+          seleccionarPestana(pestana.dataset.pagina, false);
+        });
+        pestana.addEventListener('keydown', function (evento) {
+          if (evento.key === 'ArrowRight' || evento.key === 'ArrowLeft') {
+            evento.preventDefault();
+            var siguiente = evento.key === 'ArrowRight'
+              ? (indice + 1) % pestanas.length
+              : (indice - 1 + pestanas.length) % pestanas.length;
+            seleccionarPestana(pestanas[siguiente].dataset.pagina, true);
+          }
+        });
+      });
+
+      function mostrarFoto(indice) {
+        indiceActual = (indice + botonesFoto.length) % botonesFoto.length;
+        var boton = botonesFoto[indiceActual];
+        var imagen = boton.querySelector('img');
+        imagenVisor.src = boton.dataset.imagen;
+        imagenVisor.alt = imagen.alt;
+        descripcionVisor.textContent = boton.dataset.descripcion || imagen.alt;
+        contadorVisor.textContent = (indiceActual + 1) + ' / ' + botonesFoto.length;
+      }
+
+      function abrirFoto(boton) {
+        ultimoDisparador = boton;
+        mostrarFoto(botonesFoto.indexOf(boton));
+        if (typeof visor.showModal === 'function') visor.showModal();
+      }
+
+      botonesFoto.forEach(function (boton) {
+        boton.addEventListener('click', function () { abrirFoto(boton); });
+      });
+
+      function cerrar() {
+        if (visor.open) visor.close();
+      }
+
+      cerrarVisor.addEventListener('click', cerrar);
+      anteriorVisor.addEventListener('click', function () { mostrarFoto(indiceActual - 1); });
+      siguienteVisor.addEventListener('click', function () { mostrarFoto(indiceActual + 1); });
+
+      visor.addEventListener('click', function (evento) {
+        if (evento.target === visor) cerrar();
+      });
+
+      visor.addEventListener('close', function () {
+        imagenVisor.src = '';
+        if (ultimoDisparador) ultimoDisparador.focus();
+      });
+
+      document.addEventListener('keydown', function (evento) {
+        if (!visor.open) return;
+        if (evento.key === 'ArrowLeft') {
+          evento.preventDefault();
+          mostrarFoto(indiceActual - 1);
+        } else if (evento.key === 'ArrowRight') {
+          evento.preventDefault();
+          mostrarFoto(indiceActual + 1);
+        }
+      });
+    })();
+
   </script>
 </body>
 </html>
